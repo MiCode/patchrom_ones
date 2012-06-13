@@ -21,7 +21,7 @@ local-miui-removed-apps  := LatinIME MediaProvider  MiuiGalleryi SettingsProvide
 # All apps need to be reserved from original ZIP file
 local-phone-apps := AppSharing BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	CertInstaller CustomizationSettingsProvider Camera DefaultContainerService DrmProvider \
-	FilePicker FaceLock FM_Radio FMRadioService GoogleTTS HTC_IME HtcBeatsNotify HtcMusic HtcMusicEnhancer \
+	FilePicker FaceLock FM_Radio FMRadioService GoogleTTS HTC_IME HtcBeatsNotify  HtcMusicEnhancer \
 	HtcMusicWidget HTMLViewer IMEHWRPenPower IMEXT9English KeyChain LMW \
 	OneTimeInitializer PhaseBeam PluginManager SDCardWizard SharedStorageBackup \
 	TrimIt Usage WifiRouter MediaProvider CIMEXT9 HTCAlbum HtcVideoPlayer SettingsProvider\
