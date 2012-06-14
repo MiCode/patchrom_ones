@@ -130,7 +130,7 @@ debug.composition.type=dyn
 ro.hwui.text_cache_height=768
 # For ICS project, default 32m/48m
 dalvik.vm.heapsize=128m
-dalvik.vm.heapgrowthlimit=48m
+dalvik.vm.heapgrowthlimit=64m
 ro.sf.compbypass.enable=1
 debug.enabletr=true
 debug.qctwa.preservebuf=1
