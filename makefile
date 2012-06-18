@@ -15,7 +15,7 @@ local-modified-jars := HTCExtension
 
 local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings
 # All apks from MIUI
-local-miui-removed-apps  := LatinIME MediaProvider  MiuiGalleryi SettingsProvider
+local-miui-removed-apps  := LatinIME MediaProvider  MiuiGallery SettingsProvider
 
 #local-remove-apps := Twitter  
 # All apps need to be reserved from original ZIP file
