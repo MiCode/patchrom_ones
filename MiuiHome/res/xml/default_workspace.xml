@@ -34,8 +34,8 @@
         launcher:x="1"
         launcher:y="0" />
 <!-- column y=2-->
-<favorite launcher:className="com.sec.android.app.camera.Camera" launcher:packageName="com.sec.android.app.camera" launcher:screen="1" launcher:x="0" launcher:y="2" />
-<favorite launcher:className="com.miui.gallery.app.Gallery" launcher:packageName="com.miui.gallery" launcher:screen="1" launcher:x="1" launcher:y="2" />
+<favorite launcher:className="com.android.camera.CameraEntry" launcher:packageName="com.android.camera" launcher:screen="1" launcher:x="0" launcher:y="2" />
+<favorite launcher:className="com.htc.album.AlbumMain.ActivityMainDropList" launcher:packageName="com.htc.album" launcher:screen="1" launcher:x="1" launcher:y="2" />
 <favorite launcher:className="com.miui.player.ui.MusicBrowserActivity" launcher:packageName="com.miui.player" launcher:screen="1" launcher:x="2" launcher:y="2" />
 <favorite launcher:className="com.android.thememanager.ThemeResourceTabActivity" launcher:packageName="com.android.thememanager" launcher:screen="1" launcher:x="3" launcher:y="2" />
 <!-- column y=3-->
@@ -45,7 +45,7 @@
 <!-- column y=4-->
 <favorite launcher:className="com.android.soundrecorder.SoundRecorder" launcher:packageName="com.android.soundrecorder" launcher:screen="1" launcher:x="0" launcher:y="4" />
 <favorite launcher:className="com.android.providers.downloads.ui.DownloadList" launcher:packageName="com.android.providers.downloads.ui" launcher:screen="1" launcher:x="1" launcher:y="4" />
-<favorite launcher:className="com.sec.android.app.fm.MainActivity" launcher:packageName="com.sec.android.app.fm" launcher:screen="1" launcher:x="2" launcher:y="4" />
+ <favorite launcher:className="com.htc.fm.activity.FMRadioMain" launcher:packageName="com.htc.fm" launcher:screen="1" launcher:x="2" launcher:y="4" />
 <favorite launcher:className="com.lbe.security.ui.MainActivity" launcher:packageName="com.lbe.security.miui" launcher:screen="1" launcher:x="3" launcher:y="4" />
 
 <!-- 第3屏 -->
