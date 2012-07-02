@@ -21,12 +21,12 @@ local-miui-removed-apps  := MediaProvider  MiuiGallery SettingsProvider
 # All apps need to be reserved from original ZIP file
 local-phone-apps := BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	CertInstaller Camera DefaultContainerService DrmProvider \
-	FaceLock FM_Radio FMRadioServiceHTC_IME HtcBeatsNotify \
-	HTMLViewer IMEHWRPenPower IMEXT9English KeyChain \
+	FaceLock FM_Radio FMRadioService HtcBeatsNotify \
+	HTMLViewer IMEHWRPenPower KeyChain \
 	SDCardWizard SharedStorageBackup \
-	TrimIt WifiRouter MediaProvider CIMEXT9 HTCAlbum HtcVideoPlayer SettingsProvider\
+	TrimIt WifiRouter MediaProvider HTCAlbum HtcVideoPlayer SettingsProvider\
 	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer \
-	PureC_ApplicationsProvider CIMEXT9
+	PureC_ApplicationsProvider
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
