@@ -13,9 +13,9 @@ local-modified-apps := SettingsProvider
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := Phone ThemeManager Mms MiuiHome Settings
+local-miui-modified-apps := Phone Mms MiuiHome Settings
 # All apks from MIUI
-local-miui-removed-apps  := MediaProvider  MiuiGallery SettingsProvider
+local-miui-removed-apps  := MediaProvider SettingsProvider Bluetooth
 
 #local-remove-apps := Twitter  
 # All apps need to be reserved from original ZIP file
@@ -24,8 +24,8 @@ local-phone-apps := BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	FaceLock FM_Radio FMRadioService HtcBeatsNotify \
 	HTMLViewer IMEHWRPenPower KeyChain \
 	SDCardWizard SharedStorageBackup \
-	TrimIt WifiRouter MediaProvider HTCAlbum HtcVideoPlayer SettingsProvider\
-	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer \
+	TrimIt WifiRouter MediaProvider HtcVideoPlayer SettingsProvider\
+	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer Bluetooth\
 	PureC_ApplicationsProvider
 
 # To include the local targets before and after zip the final ZIP file, 
