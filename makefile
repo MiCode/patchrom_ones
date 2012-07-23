@@ -9,11 +9,11 @@ local-zip-file     := stockrom.zip
 # local-out-zip-file :=
 
 # All apps from original ZIP, but has smali files chanded
-local-modified-apps := SettingsProvider
+local-modified-apps := SettingsProvider Camera
 
 local-modified-jars := HTCExtension
 
-local-miui-modified-apps := Phone Mms MiuiHome Settings
+local-miui-modified-apps := Phone Mms MiuiHome Settings MiuiGallery
 # All apks from MIUI
 local-miui-removed-apps  := MediaProvider SettingsProvider Bluetooth
 
@@ -22,7 +22,7 @@ local-miui-removed-apps  := MediaProvider SettingsProvider Bluetooth
 local-phone-apps := BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	CertInstaller Camera DefaultContainerService DrmProvider \
 	FaceLock FM_Radio FMRadioService HtcBeatsNotify \
-	HTMLViewer IMEHWRPenPower KeyChain HTCAlbum \
+	HTMLViewer IMEHWRPenPower KeyChain HTCAlbum\
 	SDCardWizard SharedStorageBackup \
 	TrimIt WifiRouter MediaProvider HtcVideoPlayer SettingsProvider\
 	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer Bluetooth\
