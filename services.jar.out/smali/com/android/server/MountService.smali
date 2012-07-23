@@ -4981,8 +4981,6 @@
 
     if-eqz v4, :cond_6
 
-    .line 1619
-    const-string v14, "@string/storage_sd_card"
 
     .line 1620
     const/16 v23, 0x1
@@ -5265,9 +5263,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 1626
-    const-string v14, "@string/storage_ins"
-
     .line 1627
     const-string v20, "0"
 
@@ -5284,9 +5279,6 @@
     move-result v4
 
     if-eqz v4, :cond_8
-
-    .line 1631
-    const-string v14, "@string/storage_internal"
 
     .line 1632
     const/16 v23, 0x1
