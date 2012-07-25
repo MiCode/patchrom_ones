@@ -861,12 +861,6 @@
     .line 453
     .local v0, canPlay:Z
     :try_start_0
-    const-string v3, "com.htc.video"
-
-    const-string v4, "com.htc.video.ViewVideo"
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     .line 454
     const-string v3, "landscape"
 
@@ -889,11 +883,6 @@
 
     .line 468
     :try_start_1
-    const-string v3, "com.htc.album"
-
-    const-string v4, "com.htc.album.TabPluginDevice.ViewVideo"
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 469
     const-string v3, "landscape"

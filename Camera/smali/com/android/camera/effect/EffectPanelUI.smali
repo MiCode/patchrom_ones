@@ -1022,17 +1022,6 @@
 
     .line 576
     :try_start_0
-    new-instance v1, Landroid/content/Intent;
-
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
-
-    .line 577
-    .local v1, intent:Landroid/content/Intent;
-    const-string v2, "com.htc.photoenhancer"
-
-    const-string v3, "com.htc.photoenhancer.PhotoEnhancer"
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 578
     const-string v2, "filePath"

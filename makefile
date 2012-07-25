@@ -22,7 +22,7 @@ local-miui-removed-apps  := MediaProvider SettingsProvider Bluetooth
 local-phone-apps := BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	CertInstaller Camera DefaultContainerService DrmProvider \
 	FaceLock FM_Radio FMRadioService HtcBeatsNotify \
-	HTMLViewer IMEHWRPenPower KeyChain HTCAlbum\
+	HTMLViewer IMEHWRPenPower KeyChain \
 	SDCardWizard SharedStorageBackup \
 	TrimIt WifiRouter MediaProvider HtcVideoPlayer SettingsProvider\
 	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer Bluetooth\

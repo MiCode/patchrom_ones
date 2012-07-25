@@ -24151,7 +24151,7 @@
     .line 5638
     .end local v0           #action:Ljava/lang/String;
     :cond_1
-    const-string v0, "com.htc.album.action.VIEW_PHOTO_FROM_CAMERA"
+    const-string v0, "android.intent.action.VIEW"
 
     .restart local v0       #action:Ljava/lang/String;
     goto :goto_1

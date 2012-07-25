@@ -50,20 +50,6 @@
 
     move-result-object v2
 
-    .line 75
-    .local v2, packageManager:Landroid/content/pm/PackageManager;
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 76
-    .local v0, intent:Landroid/content/Intent;
-    const-string v3, "com.android.htccontacts"
-
-    const-string v4, "com.android.htccontacts.AttachImage"
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     .line 77
     iget-object v3, p0, Lcom/android/camera/share/MediaSetAsListAdapter;->m_MediaInfo:Lcom/android/camera/MediaInfo;
 
@@ -129,12 +115,6 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 88
-    const-string v3, "com.htc.album"
-
-    const-string v4, "com.htc.album.TabPluginDevice.Wallpaper"
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 89
     invoke-virtual {v2, v0, v5}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
