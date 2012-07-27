@@ -61,6 +61,9 @@
     const-string v3, "com.android.htccontacts"
 
     const-string v4, "com.android.htccontacts.AttachImage"
+
+    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     .line 77
     iget-object v3, p0, Lcom/android/camera/share/MediaSetAsListAdapter;->m_MediaInfo:Lcom/android/camera/MediaInfo;
 
