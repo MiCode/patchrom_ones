@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:htc="http://schemas.android.com/apk/res/com.htc">
+    <TextView android:id="@id/ask_text" android:paddingLeft="@dimen/M2" android:paddingTop="@dimen/M2" android:paddingRight="@dimen/M2" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@com.htc:style/list_primary_m" />
+    <LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/M2x2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.htc.widget.HtcCheckBox android:id="@id/remind_chkbox" android:paddingLeft="@dimen/M2" android:paddingRight="@dimen/M3" android:paddingBottom="@dimen/M2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:layout_gravity="center_vertical" android:id="@id/remind_text" android:paddingRight="@dimen/M2" android:paddingBottom="@dimen/M2" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@com.htc:style/list_primary_xs" />
+    </LinearLayout>
+</LinearLayout>

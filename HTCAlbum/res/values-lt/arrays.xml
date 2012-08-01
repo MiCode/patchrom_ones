@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="slide_show_transition_option_list">
+        <item>Nėra</item>
+        <item>Fontanas</item>
+        <item>Išdėstyti pakopomis</item>
+        <item>Išnykimas</item>
+        <item>Slinkti</item>
+        <item>Pasukti</item>
+        <item>Slinktis ir mastelio keitimas</item>
+    </string-array>
+    <string-array name="slide_show_transition_option_value">
+        <item>-2</item>
+        <item>6</item>
+        <item>8</item>
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+    <array name="slide_show_duration_option_list">
+        <item>Greitas</item>
+        <item>@com.htc:string/st_medium</item>
+        <item>Lėtas</item>
+    </array>
+    <string-array name="slide_show_duration_option_value">
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+    <array name="slide_show_orientation_option_list">
+        <item>@com.htc:string/st_best_fit</item>
+        <item>Faktinis</item>
+    </array>
+    <string-array name="slide_show_orientation_option_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <array name="video_display_option_list">
+        <item>Pilnas</item>
+        <item>@com.htc:string/st_best_fit</item>
+        <item>Ištempti</item>
+    </array>
+    <string-array name="video_display_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
