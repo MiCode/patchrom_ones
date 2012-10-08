@@ -82,7 +82,10 @@ ro.product.board=MSM8960
 ro.product.cpu.abi=armeabi-v7a
 ro.product.cpu.abi2=armeabi
 ro.product.manufacturer=HTC
-ro.product.locale.language=hdpi
+ro.product.locale.language=zh
+ro.product.locale.region=cn
+persist.sys.timezone=Asia/Shanghai
+
 ro.board.platform=msm8960
 # ro.build.product is obsolete; use ro.product.device
 ro.build.product=ville
