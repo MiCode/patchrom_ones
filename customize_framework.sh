@@ -5,7 +5,6 @@
 #
 
 APKTOOL=$PORT_ROOT/tools/apktool
-ZIP_FILE=sensation_4.5.4.zip
  
 if [ $2 = "out/framework" ];then
 	echo "delete framework redundance files"
