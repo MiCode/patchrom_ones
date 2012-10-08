@@ -1,0 +1,6 @@
+TaskID : 275655
+Project : Ville_U_ICS_40_S
+SKU : HTC Europe[401]
+ROM Ver : 2.31.401.5
+Customization Id : 410362
+RCMS Id : 346

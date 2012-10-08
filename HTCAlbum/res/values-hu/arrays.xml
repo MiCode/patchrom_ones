@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="slide_show_transition_option_list">
+        <item>Nincs</item>
+        <item>Szökőkút</item>
+        <item>Lépcsőzetes</item>
+        <item>Elhalványul</item>
+        <item>Csúsztatás</item>
+        <item>Elforgatás</item>
+        <item>Pásztázás és nagyítás/kicsinyítés</item>
+    </string-array>
+    <string-array name="slide_show_transition_option_value">
+        <item>-2</item>
+        <item>6</item>
+        <item>8</item>
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+    <array name="slide_show_duration_option_list">
+        <item>Gyors</item>
+        <item>@com.htc:string/st_medium</item>
+        <item>Lassú</item>
+    </array>
+    <string-array name="slide_show_duration_option_value">
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+    <array name="slide_show_orientation_option_list">
+        <item>@com.htc:string/st_best_fit</item>
+        <item>Valódi</item>
+    </array>
+    <string-array name="slide_show_orientation_option_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <array name="video_display_option_list">
+        <item>Tele</item>
+        <item>@com.htc:string/st_best_fit</item>
+        <item>Nyújtás</item>
+    </array>
+    <string-array name="video_display_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="slide_show_transition_option_list">
+        <item>ללא</item>
+        <item>מזרקה</item>
+        <item>מפל</item>
+        <item>עימעום</item>
+        <item>שקופית</item>
+        <item>סובב</item>
+        <item>פנורמה ושינוי מרחק</item>
+    </string-array>
+    <string-array name="slide_show_transition_option_value">
+        <item>-2</item>
+        <item>6</item>
+        <item>8</item>
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+    <array name="slide_show_duration_option_list">
+        <item>מהר</item>
+        <item>@com.htc:string/st_medium</item>
+        <item>לאט</item>
+    </array>
+    <string-array name="slide_show_duration_option_value">
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+    <array name="slide_show_orientation_option_list">
+        <item>@com.htc:string/st_best_fit</item>
+        <item>אמיתי</item>
+    </array>
+    <string-array name="slide_show_orientation_option_value">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <array name="video_display_option_list">
+        <item>מלא</item>
+        <item>@com.htc:string/st_best_fit</item>
+        <item>מתח</item>
+    </array>
+    <string-array name="video_display_option_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
