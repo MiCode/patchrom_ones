@@ -26,7 +26,8 @@ local-phone-apps := BackupRestoreConfirmation PureC_UserDictionaryProvider \
 	SDCardWizard SharedStorageBackup PhaseBeam \
 	TrimIt WifiRouter MediaProvider HtcVideoPlayer SettingsProvider\
 	HtcDMC DLNAMiddleLayer HtcPhotoEnhancer Bluetooth\
-	PureC_ApplicationsProvider HTCAlbum
+	PureC_ApplicationsProvider HTCAlbum HtcLavaLiveWallpaper StreakLiveWallpaper \
+	HtcImageWallpaper
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
