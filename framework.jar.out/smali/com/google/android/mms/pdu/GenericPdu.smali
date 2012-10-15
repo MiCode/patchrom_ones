@@ -6,30 +6,24 @@
 # instance fields
 .field mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-.field private mPhoneType:I
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 34
     new-instance v0, Lcom/google/android/mms/pdu/PduHeaders;
 
     invoke-direct {v0}, Lcom/google/android/mms/pdu/PduHeaders;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 35
     return-void
 .end method
 
@@ -38,18 +32,14 @@
     .parameter "headers"
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 43
     iput-object p1, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPduHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 44
     return-void
 .end method
 
@@ -113,16 +103,6 @@
     return-object v0
 .end method
 
-.method public getPhoneType()I
-    .locals 1
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPhoneType:I
-
-    return v0
-.end method
-
 .method public setFrom(Lcom/google/android/mms/pdu/EncodedStringValue;)V
     .locals 2
     .parameter "value"
@@ -178,17 +158,5 @@
     invoke-virtual {v0, p1, v1}, Lcom/google/android/mms/pdu/PduHeaders;->setOctet(II)V
 
     .line 103
-    return-void
-.end method
-
-.method public setPhoneType(I)V
-    .locals 0
-    .parameter "phoneType"
-
-    .prologue
-    .line 57
-    iput p1, p0, Lcom/google/android/mms/pdu/GenericPdu;->mPhoneType:I
-
-    .line 58
     return-void
 .end method
