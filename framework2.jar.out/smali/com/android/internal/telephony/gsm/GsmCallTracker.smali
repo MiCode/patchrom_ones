@@ -4732,6 +4732,40 @@
     invoke-virtual {v0, v14}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyNewRingingConnection(Lcom/android/internal/telephony/Connection;)V
 
     .line 889
+    invoke-virtual {v14}, Lcom/android/internal/telephony/Connection;->getState()Lcom/android/internal/telephony/Call$State;
+
+    move-result-object v19
+
+    sget-object v20, Lcom/android/internal/telephony/Call$State;->INCOMING:Lcom/android/internal/telephony/Call$State;
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
+
+    if-ne v0, v1, :cond_14
+
+    .line 564
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
+
+    move-object/from16 v19, v0
+
+    const/16 v20, 0xe
+
+    invoke-virtual/range {v19 .. v20}, Lcom/android/internal/telephony/gsm/GSMPhone;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v12
+
+    .line 565
+    .local v12, msg:Landroid/os/Message;
+    invoke-static {v12}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
+
+    .line 566
+    invoke-virtual {v12}, Landroid/os/Message;->sendToTarget()V
+
+    .line 573
+    .end local v12           #msg:Landroid/os/Message;
     :cond_14
     move-object/from16 v0, p0
 
