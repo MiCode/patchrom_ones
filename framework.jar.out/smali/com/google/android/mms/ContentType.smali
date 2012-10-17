@@ -716,7 +716,7 @@
     .line 314
     if-eqz p0, :cond_0
 
-    const-string/jumbo v0, "image/"
+    const-string v0, "image/"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

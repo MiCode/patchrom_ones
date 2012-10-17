@@ -466,3 +466,206 @@
     .end packed-switch
 .end method
 
+.method public gsmAuthentication([B)Lcom/orange/authentication/simcard/GsmAuthenticationResult;
+    .locals 7
+    .parameter "rand"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/orange/authentication/simcard/ServiceFailureException;,
+            Lcom/orange/authentication/simcard/SimNotReadyException;,
+            Lcom/orange/authentication/simcard/UserAuthenticationRejectException;
+        }
+    .end annotation
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 115
+    if-nez p1, :cond_0
+
+    .line 116
+    new-instance v3, Ljava/lang/NullPointerException;
+
+    const-string v4, "RAND is null!"
+
+    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 119
+    :cond_0
+    array-length v3, p1
+
+    const/16 v5, 0x10
+
+    if-eq v3, v5, :cond_1
+
+    .line 120
+    new-instance v3, Ljava/lang/IllegalArgumentException;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "RAND length is invalid: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    array-length v5, p1
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 123
+    :cond_1
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationManager;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {v3}, Landroid/telephony/TelephonyManager;->getSimState()I
+
+    move-result v3
+
+    const/4 v5, 0x5
+
+    if-eq v3, v5, :cond_2
+
+    .line 124
+    new-instance v3, Lcom/orange/authentication/simcard/SimNotReadyException;
+
+    invoke-direct {v3}, Lcom/orange/authentication/simcard/SimNotReadyException;-><init>()V
+
+    throw v3
+
+    .line 128
+    :cond_2
+    :try_start_0
+    invoke-direct {p0}, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationManager;->getAuthenticatorService()Lcom/android/internal/telephony/gsm/IHtcSimCardAuthenticator;
+
+    move-result-object v3
+
+    invoke-interface {v3, p1}, Lcom/android/internal/telephony/gsm/IHtcSimCardAuthenticator;->requestGsmAuthentication([B)Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+
+    move-result-object v2
+
+    .line 129
+    .local v2, result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    iget-object v3, v2, Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;->ex:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException;
+
+    if-nez v3, :cond_3
+
+    .line 130
+    new-instance v3, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationManager$GsmAuthenticationResultWrapper;
+
+    invoke-direct {v3, v2}, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationManager$GsmAuthenticationResultWrapper;-><init>(Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;)V
+
+    .line 146
+    .end local v2           #result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    :goto_0
+    return-object v3
+
+    .line 133
+    .restart local v2       #result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    :cond_3
+    iget-object v3, v2, Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;->ex:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException;
+
+    iget-object v0, v3, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException;->e:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+
+    .line 134
+    .local v0, error:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+    sget-object v3, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;->USER_AUTHENTICATION_REJECTED:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+
+    invoke-virtual {v0, v3}, Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    .line 135
+    new-instance v3, Lcom/orange/authentication/simcard/UserAuthenticationRejectException;
+
+    invoke-direct {v3}, Lcom/orange/authentication/simcard/UserAuthenticationRejectException;-><init>()V
+
+    throw v3
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 140
+    .end local v0           #error:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+    .end local v2           #result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    :catch_0
+    move-exception v1
+
+    .line 141
+    .local v1, ex:Landroid/os/RemoteException;
+    const-string v3, "HtcSimCardAuthenticationManager"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Got RemoteException: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v3, v4
+
+    .line 142
+    goto :goto_0
+
+    .line 137
+    .end local v1           #ex:Landroid/os/RemoteException;
+    .restart local v0       #error:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+    .restart local v2       #result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    :cond_4
+    :try_start_1
+    new-instance v3, Lcom/orange/authentication/simcard/ServiceFailureException;
+
+    invoke-direct {v3}, Lcom/orange/authentication/simcard/ServiceFailureException;-><init>()V
+
+    throw v3
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 143
+    .end local v0           #error:Lcom/android/internal/telephony/gsm/HtcSimCardAuthenticationException$Error;
+    .end local v2           #result:Lcom/android/internal/telephony/gsm/HtcGsmAuthenticationResult;
+    :catch_1
+    move-exception v1
+
+    .line 145
+    .local v1, ex:Ljava/lang/NullPointerException;
+    const-string v3, "HtcSimCardAuthenticationManager"
+
+    const-string v5, "Unable to get AuthenticationService!"
+
+    invoke-static {v3, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v3, v4
+
+    .line 146
+    goto :goto_0
+.end method

@@ -15,33 +15,33 @@
 
 
 # static fields
-.field public static final dmc_footer_button_weight:I = 0x3050009
+.field public static final dmc_footer_button_weight:I = 0x6050009
 
-.field public static final dmc_footer_button_weight_port:I = 0x305000b
+.field public static final dmc_footer_button_weight_port:I = 0x605000b
 
-.field public static final dmc_footer_seekbar_weight:I = 0x305000a
+.field public static final dmc_footer_seekbar_weight:I = 0x605000a
 
-.field public static final dmc_footer_seekbar_weight_port:I = 0x305000c
+.field public static final dmc_footer_seekbar_weight_port:I = 0x605000c
 
-.field public static final footer_button_weight:I = 0x3050000
+.field public static final footer_button_weight:I = 0x6050000
 
-.field public static final footer_button_weight_land:I = 0x305000d
+.field public static final footer_button_weight_land:I = 0x605000d
 
-.field public static final footer_button_weight_port:I = 0x3050005
+.field public static final footer_button_weight_port:I = 0x6050005
 
-.field public static final footer_divider_weight:I = 0x3050008
+.field public static final footer_divider_weight:I = 0x6050008
 
-.field public static final footer_playctrl_weight:I = 0x3050004
+.field public static final footer_playctrl_weight:I = 0x6050004
 
-.field public static final footer_playctrl_weight_port:I = 0x3050007
+.field public static final footer_playctrl_weight_port:I = 0x6050007
 
-.field public static final footer_seekbar_hide_1_button_weight:I = 0x3050002
+.field public static final footer_seekbar_hide_1_button_weight:I = 0x6050002
 
-.field public static final footer_seekbar_hide_2_button_weight:I = 0x3050003
+.field public static final footer_seekbar_hide_2_button_weight:I = 0x6050003
 
-.field public static final footer_seekbar_weight:I = 0x3050001
+.field public static final footer_seekbar_weight:I = 0x6050001
 
-.field public static final footer_seekbar_weight_port:I = 0x3050006
+.field public static final footer_seekbar_weight_port:I = 0x6050006
 
 
 # direct methods

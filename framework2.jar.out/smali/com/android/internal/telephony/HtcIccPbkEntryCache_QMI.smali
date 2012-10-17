@@ -6794,15 +6794,9 @@
 
     const/16 v41, 0x10
 
-    invoke-static/range {v40 .. v41}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    invoke-static/range {v40 .. v41}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
 
-    move-result v40
-
-    move/from16 v0, v40
-
-    int-to-long v0, v0
-
-    move-wide/from16 v40, v0
+    move-result-wide v40
 
     move-wide/from16 v0, v40
 
@@ -14401,8 +14395,6 @@
     invoke-static/range {v40 .. v41}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
-
-    nop
 
     .line 241
     :pswitch_data_0

@@ -53,7 +53,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1357
+    .line 1360
     invoke-direct {p0, p1}, Lcom/google/android/mms/pdu/PduComposer$BufferStack;-><init>(Lcom/google/android/mms/pdu/PduComposer;)V
 
     return-void
@@ -65,7 +65,7 @@
     .locals 4
 
     .prologue
-    .line 1414
+    .line 1417
     iget-object v0, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->toCopy:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
@@ -84,12 +84,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/mms/pdu/PduComposer;->arraycopy([BII)V
 
-    .line 1417
+    .line 1420
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->toCopy:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
-    .line 1418
+    .line 1421
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .locals 3
 
     .prologue
-    .line 1424
+    .line 1427
     new-instance v0, Lcom/google/android/mms/pdu/PduComposer$PositionMarker;
 
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
@@ -106,7 +106,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/mms/pdu/PduComposer$PositionMarker;-><init>(Lcom/google/android/mms/pdu/PduComposer;Lcom/google/android/mms/pdu/PduComposer$1;)V
 
-    .line 1426
+    .line 1429
     .local v0, m:Lcom/google/android/mms/pdu/PduComposer$PositionMarker;
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
@@ -127,12 +127,12 @@
     .locals 3
 
     .prologue
-    .line 1370
+    .line 1373
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->toCopy:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
     if-eqz v1, :cond_0
 
-    .line 1371
+    .line 1374
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "BUG: Invalid newbuf() before copy()"
@@ -141,7 +141,7 @@
 
     throw v1
 
-    .line 1374
+    .line 1377
     :cond_0
     new-instance v0, Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
@@ -149,7 +149,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;-><init>(Lcom/google/android/mms/pdu/PduComposer$1;)V
 
-    .line 1376
+    .line 1379
     .local v0, temp:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
@@ -157,29 +157,29 @@
 
     iput-object v1, v0, Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;->currentMessage:Ljava/io/ByteArrayOutputStream;
 
-    .line 1377
+    .line 1380
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
     iget v1, v1, Lcom/google/android/mms/pdu/PduComposer;->mPosition:I
 
     iput v1, v0, Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;->currentPosition:I
 
-    .line 1379
+    .line 1382
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->stack:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
     iput-object v1, v0, Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;->next:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
-    .line 1380
+    .line 1383
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->stack:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;
 
-    .line 1382
+    .line 1385
     iget v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->stackSize:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->stackSize:I
 
-    .line 1385
+    .line 1388
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
     new-instance v2, Ljava/io/ByteArrayOutputStream;
@@ -188,14 +188,14 @@
 
     iput-object v2, v1, Lcom/google/android/mms/pdu/PduComposer;->mMessage:Ljava/io/ByteArrayOutputStream;
 
-    .line 1386
+    .line 1389
     iget-object v1, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
     const/4 v2, 0x0
 
     iput v2, v1, Lcom/google/android/mms/pdu/PduComposer;->mPosition:I
 
-    .line 1387
+    .line 1390
     return-void
 .end method
 
@@ -221,7 +221,7 @@
 
     iput-object v3, v2, Lcom/google/android/mms/pdu/PduComposer;->mMessage:Ljava/io/ByteArrayOutputStream;
 
-    .line 1398
+    .line 1401
     iget-object v2, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->this$0:Lcom/google/android/mms/pdu/PduComposer;
 
     iget-object v3, p0, Lcom/google/android/mms/pdu/PduComposer$BufferStack;->stack:Lcom/google/android/mms/pdu/PduComposer$LengthRecordNode;

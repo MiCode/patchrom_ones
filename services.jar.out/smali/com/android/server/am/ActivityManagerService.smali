@@ -1624,23 +1624,18 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1668
     .local v1, systemDir:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
-    .line 1677
+    invoke-static {v1, v0}, Lmiui/os/Environment;->init(Ljava/io/File;Ljava/io/File;)V
     invoke-static {}, Lcom/htc/profileflag/ProfileConfig;->getCheckLowMemory()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 1678
     invoke-static {}, Lcom/android/server/am/MemoryLogUtilAm;->init()V
 
-    invoke-static {v1, v0}, Lmiui/os/Environment;->init(Ljava/io/File;Ljava/io/File;)V
-
-    .line 1682
     :cond_0
     new-instance v2, Lcom/android/server/am/BatteryStatsService;
 

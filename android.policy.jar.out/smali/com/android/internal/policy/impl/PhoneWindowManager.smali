@@ -9672,6 +9672,7 @@
 
     move-result v5
 
+
     move/from16 v0, p2
 
     and-int/lit16 v0, v0, 0x100
@@ -9711,16 +9712,16 @@
 
     const/16 v20, 0x0
 
-    if-eqz v7, :cond_miui_39
+    if-eqz v7, :miui_cond_1
     
     const/16 v21, 0x1
 
-    goto :goto_12
+    goto :miui_goto_1
 
-    :cond_miui_39
+    :miui_cond_1
     const/16 v21, 0x2
 
-    :goto_12
+    :miui_goto_1
     const/16 v22, 0x0
 
     move-object/from16 v0, p0
@@ -16395,7 +16396,6 @@
     :sswitch_0
     return v0
 
-    .line 1856
     :cond_0
     sparse-switch p1, :sswitch_data_0
 
@@ -16543,7 +16543,6 @@
 
     goto :goto_0
 
-    .line 4096
     :sswitch_data_0
     .sparse-switch
         0x64 -> :sswitch_17
@@ -16573,4 +16572,27 @@
         0x7e5 -> :sswitch_15
         0x7e6 -> :sswitch_16
     .end sparse-switch
+.end method
+
+.method private notifyPowerKeyUp()V
+    .locals 3
+
+    .prologue
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.KEYCODE_POWER_UP"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 1856
+    :cond_0
+    return-void
 .end method

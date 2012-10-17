@@ -592,6 +592,9 @@
 .method public abstract registerForModemLinkStatus(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
+.method public abstract registerForModemResetNotify(Landroid/os/Handler;ILjava/lang/Object;)V
+.end method
+
 .method public abstract registerForMsgWaitIndicator(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -1036,6 +1039,9 @@
 .method public abstract sendUSSD(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
+.method public abstract sendUserTrialFeedback(Landroid/os/Message;)V
+.end method
+
 .method public abstract separateConnection(ILandroid/os/Message;)V
 .end method
 
@@ -1478,6 +1484,9 @@
 .end method
 
 .method public abstract unregisterForModemLinkStatus(Landroid/os/Handler;)V
+.end method
+
+.method public abstract unregisterForModemResetNotify(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForMsgWaitIndicator(Landroid/os/Handler;)V

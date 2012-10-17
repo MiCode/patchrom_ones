@@ -28,17 +28,17 @@
     .parameter
 
     .prologue
-    .line 375
+    .line 381
     iput-object p1, p0, Lcom/htc/view/VolumePanel$SoundID;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 376
+    .line 382
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/htc/view/VolumePanel$SoundID;->mLoaded:Z
 
-    .line 377
+    .line 383
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/htc/view/VolumePanel$SoundID;->mId:I

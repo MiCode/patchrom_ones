@@ -817,7 +817,6 @@
     .parameter "x0"
 
     .prologue
-    .line 107
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->adjustStatusBarLocked()V
 
     return-void
@@ -2140,25 +2139,19 @@
     .locals 1
 
     .prologue
-    .line 1797
     monitor-enter p0
 
-    .line 1798
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator;->mKeyguardViewManager:Lcom/android/internal/policy/impl/KeyguardViewManager;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/KeyguardViewManager;->reset()V
 
-    .line 1800
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->adjustStatusBarLocked()V
 
-    .line 1802
     monitor-exit p0
 
-    .line 1803
     return-void
 
-    .line 1802
     :catchall_0
     move-exception v0
 

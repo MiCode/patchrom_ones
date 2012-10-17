@@ -1252,28 +1252,23 @@
 
     move-result-object v0
 
-    .line 2411
     iget-object v2, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->getUimState()Lcom/android/internal/telephony/IccCard$State;
 
     move-result-object v1
 
-    .line 2413
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->stuckOnLockScreenBecauseSimMissing()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 2414
     sget-object v2, Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;->LockScreen:Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
 
-    .line 2455
     :goto_0
     return-object v2
 
-    .line 2418
     :cond_0
     sget-short v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_PROJECT_flag:S
 
@@ -9242,6 +9237,10 @@
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->show()V
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->restoreWidgetState()V
+
+    if-eqz v0, :cond_0
+
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->activateFaceLockIfAble()V
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->usingFaceLock()Z
 

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 628
+    .line 634
     iput-object p1, p0, Lcom/htc/view/VolumePanel$3;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "dialog"
 
     .prologue
-    .line 630
+    .line 636
     iget-object v0, p0, Lcom/htc/view/VolumePanel$3;->this$0:Lcom/htc/view/VolumePanel;
 
     const/4 v1, -0x1
@@ -50,7 +50,7 @@
     #setter for: Lcom/htc/view/VolumePanel;->mActiveStreamType:I
     invoke-static {v0, v1}, Lcom/htc/view/VolumePanel;->access$302(Lcom/htc/view/VolumePanel;I)I
 
-    .line 631
+    .line 637
     iget-object v0, p0, Lcom/htc/view/VolumePanel$3;->this$0:Lcom/htc/view/VolumePanel;
 
     #getter for: Lcom/htc/view/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
-    .line 632
+    .line 638
     return-void
 .end method

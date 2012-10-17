@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1851
+    .line 1844
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -40,21 +40,21 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1857
+    .line 1850
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iget-object v4, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mDatagramSocket:Ljava/net/DatagramSocket;
 
     if-eqz v4, :cond_0
 
-    .line 1859
+    .line 1852
     const/4 v1, 0x0
 
-    .line 1860
+    .line 1853
     .local v1, packet:Ljava/net/DatagramPacket;
     const/4 v3, 0x0
 
-    .line 1864
+    .line 1857
     .local v3, success:Z
     :try_start_0
     new-instance v2, Ljava/net/DatagramPacket;
@@ -74,7 +74,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1865
+    .line 1858
     .end local v1           #packet:Ljava/net/DatagramPacket;
     .local v2, packet:Ljava/net/DatagramPacket;
     :try_start_1
@@ -87,18 +87,18 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1866
+    .line 1859
     const/4 v3, 0x1
 
     move-object v1, v2
 
-    .line 1873
+    .line 1866
     .end local v2           #packet:Ljava/net/DatagramPacket;
     .restart local v1       #packet:Ljava/net/DatagramPacket;
     :goto_0
     if-eqz v3, :cond_1
 
-    .line 1874
+    .line 1867
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     invoke-virtual {v1}, Ljava/net/DatagramPacket;->getLength()I
@@ -107,7 +107,7 @@
 
     iput v5, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxLen:I
 
-    .line 1887
+    .line 1880
     :goto_1
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
@@ -115,14 +115,14 @@
 
     if-gtz v4, :cond_2
 
-    .line 1903
+    .line 1896
     .end local v1           #packet:Ljava/net/DatagramPacket;
     .end local v3           #success:Z
     :cond_0
     :goto_2
     return-void
 
-    .line 1876
+    .line 1869
     .restart local v1       #packet:Ljava/net/DatagramPacket;
     .restart local v3       #success:Z
     :cond_1
@@ -132,7 +132,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mDatagramSocket:Ljava/net/DatagramSocket;
 
-    .line 1878
+    .line 1871
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iget-object v5, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
@@ -145,7 +145,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxBuf:[B
 
-    .line 1879
+    .line 1872
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iget-object v5, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
@@ -158,38 +158,38 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mTxBuf:[B
 
-    .line 1880
+    .line 1873
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iput v6, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxPos:I
 
-    .line 1881
+    .line 1874
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iput v6, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxLen:I
 
-    .line 1882
+    .line 1875
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iput v6, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mTxPos:I
 
-    .line 1883
+    .line 1876
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iput v6, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mTxLen:I
 
     goto :goto_1
 
-    .line 1891
+    .line 1884
     :cond_2
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iput v6, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxPos:I
 
-    .line 1892
+    .line 1885
     const/16 v0, 0xff
 
-    .line 1893
+    .line 1886
     .local v0, available:I
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
@@ -197,12 +197,12 @@
 
     if-ge v4, v0, :cond_3
 
-    .line 1894
+    .line 1887
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
     iget v0, v4, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;->mRxLen:I
 
-    .line 1898
+    .line 1891
     :cond_3
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel$UdpClientThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$UdpClientChannel;
 
@@ -221,7 +221,7 @@
 
     goto :goto_2
 
-    .line 1869
+    .line 1862
     .end local v0           #available:I
     :catch_0
     move-exception v4
@@ -239,7 +239,7 @@
     .restart local v1       #packet:Ljava/net/DatagramPacket;
     goto :goto_0
 
-    .line 1867
+    .line 1860
     :catch_2
     move-exception v4
 

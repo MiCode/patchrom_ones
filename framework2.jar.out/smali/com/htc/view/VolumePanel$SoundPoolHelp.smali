@@ -64,36 +64,36 @@
     .local p2, listSrcFile:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v1, -0x1
 
-    .line 388
+    .line 394
     iput-object p1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 381
+    .line 387
     iput v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mLastStreamID:I
 
-    .line 382
+    .line 388
     iput v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mStreamType:I
 
-    .line 389
+    .line 395
     iput p4, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mStreamType:I
 
-    .line 390
+    .line 396
     if-eqz p2, :cond_1
 
-    .line 391
+    .line 397
     new-instance v1, Landroid/media/SoundPool;
 
     invoke-direct {v1, p3, p4, p5}, Landroid/media/SoundPool;-><init>(III)V
 
     iput-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
-    .line 392
+    .line 398
     iget-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v1, p0}, Landroid/media/SoundPool;->setOnLoadCompleteListener(Landroid/media/SoundPool$OnLoadCompleteListener;)V
 
-    .line 393
+    .line 399
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v1
@@ -102,10 +102,10 @@
 
     iput-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
-    .line 394
+    .line 400
     iput-object p2, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mListSrcFile:Ljava/util/List;
 
-    .line 395
+    .line 401
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -116,7 +116,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 396
+    .line 402
     iget-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
     new-instance v2, Lcom/htc/view/VolumePanel$SoundID;
@@ -125,12 +125,12 @@
 
     aput-object v2, v1, v0
 
-    .line 395
+    .line 401
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 405
+    .line 411
     :cond_0
     const-string v1, "VolumePanel"
 
@@ -138,12 +138,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 411
+    .line 417
     .end local v0           #i:I
     :goto_1
     return-void
 
-    .line 408
+    .line 414
     :cond_1
     const-string v1, "VolumePanel"
 
@@ -167,7 +167,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
+    .line 415
     new-instance v1, Landroid/media/ToneGenerator;
 
     const/16 v2, 0x64
@@ -194,12 +194,12 @@
 
     const/high16 v2, 0x3f80
 
-    .line 422
+    .line 428
     iget-object v3, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     if-eqz v3, :cond_4
 
-    .line 423
+    .line 429
     iget-object v3, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
     array-length v3, v3
@@ -208,7 +208,7 @@
 
     if-gez p1, :cond_1
 
-    .line 424
+    .line 430
     :cond_0
     iget-object v3, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
@@ -216,7 +216,7 @@
 
     add-int/lit8 p1, v3, -0x1
 
-    .line 425
+    .line 431
     const-string v3, "VolumePanel"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -239,7 +239,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 427
+    .line 433
     :cond_1
     iget-object v3, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
@@ -249,10 +249,10 @@
 
     if-ne v3, v0, :cond_3
 
-    .line 428
+    .line 434
     const/4 v10, 0x1
 
-    .line 430
+    .line 436
     .local v10, priorityDefault:I
     iget-object v2, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
@@ -268,7 +268,7 @@
 
     move-result v1
 
-    .line 431
+    .line 437
     .local v1, soundID:I
     const-string v0, "VolumePanel"
 
@@ -308,37 +308,37 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 432
+    .line 438
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
     aget-object v0, v0, p1
 
     iput v1, v0, Lcom/htc/view/VolumePanel$SoundID;->mId:I
 
-    .line 452
+    .line 458
     .end local v1           #soundID:I
     .end local v10           #priorityDefault:I
     :cond_2
     :goto_0
     return v1
 
-    .line 435
+    .line 441
     :cond_3
     const/high16 v12, 0x3f80
 
-    .line 436
+    .line 442
     .local v12, volume:F
     const/4 v9, 0x0
 
-    .line 437
+    .line 443
     .local v9, priority:I
     const/4 v8, 0x0
 
-    .line 438
+    .line 444
     .local v8, loop:I
     const/high16 v11, 0x3f80
 
-    .line 440
+    .line 446
     .local v11, rateNorame:F
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
@@ -346,7 +346,7 @@
 
     iget v1, v0, Lcom/htc/view/VolumePanel$SoundID;->mId:I
 
-    .line 441
+    .line 447
     .restart local v1       #soundID:I
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
@@ -362,12 +362,12 @@
 
     iput v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mLastStreamID:I
 
-    .line 442
+    .line 448
     iget v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mLastStreamID:I
 
     goto :goto_0
 
-    .line 444
+    .line 450
     .end local v1           #soundID:I
     .end local v8           #loop:I
     .end local v9           #priority:I
@@ -378,10 +378,10 @@
 
     if-eqz v2, :cond_5
 
-    .line 445
+    .line 451
     const/4 v7, 0x0
 
-    .line 446
+    .line 452
     .local v7, bResult:Z
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
@@ -391,19 +391,19 @@
 
     move-result v7
 
-    .line 447
+    .line 453
     if-nez v7, :cond_2
 
     move v1, v4
 
-    .line 450
+    .line 456
     goto :goto_0
 
     .end local v7           #bResult:Z
     :cond_5
     move v1, v0
 
-    .line 452
+    .line 458
     goto :goto_0
 .end method
 
@@ -411,30 +411,30 @@
     .locals 2
 
     .prologue
-    .line 414
+    .line 420
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     if-eqz v0, :cond_0
 
-    .line 415
+    .line 421
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     iget v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mLastStreamID:I
 
     invoke-virtual {v0, v1}, Landroid/media/SoundPool;->stop(I)V
 
-    .line 417
+    .line 423
     :cond_0
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
     if-eqz v0, :cond_1
 
-    .line 418
+    .line 424
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
     invoke-virtual {v0}, Landroid/media/ToneGenerator;->stopTone()V
 
-    .line 419
+    .line 425
     :cond_1
     return-void
 .end method
@@ -446,7 +446,7 @@
     .parameter "status"
 
     .prologue
-    .line 470
+    .line 476
     const-string v0, "VolumePanel"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -479,10 +479,10 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
+    .line 477
     const/4 v11, 0x0
 
-    .line 472
+    .line 478
     .local v11, status_succee:I
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
@@ -490,31 +490,31 @@
 
     if-eqz p3, :cond_1
 
-    .line 486
+    .line 492
     :cond_0
     return-void
 
-    .line 474
+    .line 480
     :cond_1
     const/high16 v12, 0x3f80
 
-    .line 475
+    .line 481
     .local v12, volume:F
     const/4 v9, 0x0
 
-    .line 476
+    .line 482
     .local v9, priority:I
     const/4 v8, 0x0
 
-    .line 477
+    .line 483
     .local v8, loop:I
     const/high16 v10, 0x3f80
 
-    .line 479
+    .line 485
     .local v10, rateNorame:F
     move v1, p2
 
-    .line 480
+    .line 486
     .local v1, soundID:I
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
@@ -534,7 +534,7 @@
 
     iput v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mLastStreamID:I
 
-    .line 482
+    .line 488
     const/4 v7, 0x0
 
     .local v7, i:I
@@ -545,7 +545,7 @@
 
     if-ge v7, v0, :cond_0
 
-    .line 483
+    .line 489
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
     aget-object v0, v0, v7
@@ -554,7 +554,7 @@
 
     if-ne v0, p2, :cond_2
 
-    .line 484
+    .line 490
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mlistSoundId:[Lcom/htc/view/VolumePanel$SoundID;
 
     aget-object v0, v0, v7
@@ -563,7 +563,7 @@
 
     iput-boolean v2, v0, Lcom/htc/view/VolumePanel$SoundID;->mLoaded:Z
 
-    .line 482
+    .line 488
     :cond_2
     add-int/lit8 v7, v7, 0x1
 
@@ -576,34 +576,34 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 456
+    .line 462
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     if-eqz v0, :cond_0
 
-    .line 457
+    .line 463
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v0}, Landroid/media/SoundPool;->release()V
 
-    .line 458
+    .line 464
     iput-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mSoundPool:Landroid/media/SoundPool;
 
-    .line 460
+    .line 466
     :cond_0
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
     if-eqz v0, :cond_1
 
-    .line 461
+    .line 467
     iget-object v0, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
     invoke-virtual {v0}, Landroid/media/ToneGenerator;->release()V
 
-    .line 462
+    .line 468
     iput-object v1, p0, Lcom/htc/view/VolumePanel$SoundPoolHelp;->mToneGen:Landroid/media/ToneGenerator;
 
-    .line 464
+    .line 470
     :cond_1
     return-void
 .end method

@@ -5411,6 +5411,9 @@
 
     if-eqz v11, :cond_3
 
+    .line 1703
+    const-string v14, "phone"
+
     .line 1704
     const/16 v23, 0x1
 
@@ -5567,24 +5570,20 @@
 
     if-eqz v11, :cond_7
 
-    .line 1713
+    #const-string v14, "@string/storage_sd_card"
+
     const/16 v23, 0x1
 
-    .line 1714
     const/4 v5, 0x1
 
-    .line 1715
     const/4 v6, 0x0
 
-    .line 1716
     const/4 v7, 0x0
 
-    .line 1717
     const-string v20, "0"
 
     goto :goto_2
 
-    .line 1718
     :cond_7
     const-string v11, "/mnt/emmc"
 
@@ -5596,15 +5595,12 @@
 
     if-eqz v11, :cond_3
 
-    .line 1719
-    const-string v14, "@string/storage_ins"
+    #const-string v14, "@string/storage_ins"
 
-    .line 1720
     const-string v20, "0"
 
     goto :goto_2
 
-    .line 1724
     :cond_8
     const-string v11, "/mnt/sdcard"
 
@@ -5616,24 +5612,20 @@
 
     if-eqz v11, :cond_9
 
-    .line 1726
+    #const-string v14, "@string/storage_internal"
+
     const/16 v23, 0x1
 
-    .line 1727
     const/4 v5, 0x0
 
-    .line 1728
     const/4 v6, 0x0
 
-    .line 1729
     const/4 v7, 0x0
 
-    .line 1730
     const-string v20, "0"
 
     goto :goto_2
 
-    .line 1731
     :cond_9
     const-string v11, "/mnt/emmc"
 

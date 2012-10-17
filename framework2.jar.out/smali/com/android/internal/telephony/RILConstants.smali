@@ -622,6 +622,8 @@
 
 .field public static final RIL_REQUEST_SEND_UIM_OTA_STATUS:I = 0x249
 
+.field public static final RIL_REQUEST_SEND_USER_TRIAL_FEEDBACK:I = 0x263
+
 .field public static final RIL_REQUEST_SEND_USSD:I = 0x1d
 
 .field public static final RIL_REQUEST_SEPARATE_CONNECTION:I = 0x34
@@ -925,6 +927,8 @@
 .field public static final RIL_UNSOL_MM_LU_FAILED_CAUSE:I = 0x5ea
 
 .field public static final RIL_UNSOL_MODEM_LINK_STATUS:I = 0x5ee
+
+.field public static final RIL_UNSOL_MODEM_RESET:I = 0x60d
 
 .field public static final RIL_UNSOL_NITZ_TIME_RECEIVED:I = 0x3f0
 

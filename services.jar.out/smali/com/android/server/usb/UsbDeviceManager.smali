@@ -1595,7 +1595,7 @@
 
     iget-boolean v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
 
-    if-eqz v7, :cond_2
+    #if-eqz v7, :cond_2
 
     :goto_1
     invoke-static {v3, v6, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z

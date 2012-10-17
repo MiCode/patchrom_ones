@@ -152,6 +152,8 @@
 
 .field private static final CMD_HTC_REQUEST_GET_WIMAX_NAI_DONE:I = 0xa1
 
+.field private static final CMD_HTC_REQUEST_SEND_USER_TRIAL_FEEDBACK:I = 0x6bb
+
 .field private static final CMD_HTC_REQUEST_SET_CDMA_SMART_NETWORK:I = 0x6ae
 
 .field private static final CMD_HTC_REQUEST_SET_CDMA_SMART_NETWORK_RESULT:I = 0x6af
@@ -232,6 +234,8 @@
 
 .field public static final METHOD_NAME_GET_PRL:Ljava/lang/String; = "getPRL"
 
+.field private static final METHOD_NAME_SEND_USER_TRIAL_FEEDBACK:Ljava/lang/String; = "sendUserTrialFeedback"
+
 .field public static final METHOD_NAME_SET_CDMA_SMART_NETWORK:Ljava/lang/String; = "setCdmaSmartNetwork"
 
 .field private static final READ_PHONE_STATE:Ljava/lang/String; = "android.permission.READ_PHONE_STATE"
@@ -280,32 +284,32 @@
     .parameter "ci"
 
     .prologue
-    .line 1578
+    .line 1583
     invoke-direct {p0}, Lcom/android/internal/telephony/IHtcTelephonyInternal$Stub;-><init>()V
 
-    .line 262
+    .line 267
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->rejectAll:Z
 
-    .line 1595
+    .line 1600
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
-    .line 1579
+    .line 1584
     iput-object p1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    .line 1580
+    .line 1585
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
-    .line 1581
+    .line 1586
     new-instance v0, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadHandler;
 
     const/4 v1, 0x0
@@ -314,20 +318,20 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mMainThreadHandler:Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadHandler;
 
-    .line 1582
+    .line 1587
     iput-object p2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 1589
+    .line 1594
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/gsm/HtcOrangeSimApiUtils;->init(Landroid/content/Context;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 1591
+    .line 1596
     invoke-direct {p0}, Lcom/android/internal/telephony/HtcTelephonyInternal;->InitMethodMap()V
 
-    .line 1593
+    .line 1598
     return-void
 .end method
 
@@ -335,7 +339,7 @@
     .locals 3
 
     .prologue
-    .line 1598
+    .line 1603
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getLTELastErrorCode"
@@ -348,7 +352,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1600
+    .line 1605
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "setCdmaSmartNetwork"
@@ -361,7 +365,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1601
+    .line 1606
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getCdmaSmartNetworkStatus"
@@ -374,7 +378,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1603
+    .line 1608
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getCdmaSysRecordSize"
@@ -387,7 +391,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1604
+    .line 1609
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getCdmaSysRecordContent"
@@ -400,7 +404,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1605
+    .line 1610
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "clearCdmaSysRecordContent"
@@ -413,7 +417,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1606
+    .line 1611
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getIMEI"
@@ -426,7 +430,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1607
+    .line 1612
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getIMEISV"
@@ -439,7 +443,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1608
+    .line 1613
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getMEID"
@@ -452,7 +456,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1609
+    .line 1614
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getPRI"
@@ -465,7 +469,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1610
+    .line 1615
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getPRL"
@@ -478,7 +482,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1611
+    .line 1616
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getCDMAMIN"
@@ -491,7 +495,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1612
+    .line 1617
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getICCSN"
@@ -504,7 +508,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1614
+    .line 1619
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     const-string v1, "getAtrInfo"
@@ -517,7 +521,20 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1616
+    .line 1623
+    iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
+
+    const-string v1, "sendUserTrialFeedback"
+
+    const/16 v2, 0x6bb
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1625
     return-void
 .end method
 
@@ -607,35 +624,35 @@
     .parameter "data"
 
     .prologue
-    .line 2172
+    .line 2181
     array-length v0, p2
 
-    .line 2175
+    .line 2184
     .local v0, len:I
     const/16 v1, 0xff
 
     if-le v0, v1, :cond_0
 
-    .line 2176
+    .line 2185
     const/16 v0, 0xff
 
-    .line 2177
+    .line 2186
     const-string v1, "HtcTelephonyInternal"
 
     const-string v2, "Too long value in GBA Bootstrapping parameters"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2180
+    .line 2189
     :cond_0
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 2181
+    .line 2190
     const/4 v1, 0x0
 
     invoke-virtual {p1, p2, v1, v0}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
-    .line 2182
+    .line 2191
     return-void
 .end method
 
@@ -650,7 +667,7 @@
     .parameter "data"
 
     .prologue
-    .line 1839
+    .line 1848
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -659,7 +676,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1840
+    .line 1849
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Only Smartcard API may access UICC"
@@ -668,7 +685,7 @@
 
     throw v0
 
-    .line 1843
+    .line 1852
     :cond_0
     const/16 v10, 0x7d
 
@@ -696,7 +713,7 @@
 
     check-cast v8, Lcom/android/internal/telephony/IccIoResult;
 
-    .line 1846
+    .line 1855
     .local v8, response:Lcom/android/internal/telephony/IccIoResult;
     iget v0, v8, Lcom/android/internal/telephony/IccIoResult;->sw1:I
 
@@ -720,13 +737,13 @@
 
     move-result-object v9
 
-    .line 1848
+    .line 1857
     .local v9, s:Ljava/lang/String;
     iget-object v0, v8, Lcom/android/internal/telephony/IccIoResult;->payload:[B
 
     if-eqz v0, :cond_1
 
-    .line 1849
+    .line 1858
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -749,7 +766,7 @@
 
     move-result-object v9
 
-    .line 1851
+    .line 1860
     :cond_1
     return-object v9
 .end method
@@ -760,7 +777,7 @@
     .parameter "argument"
 
     .prologue
-    .line 1546
+    .line 1551
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v2
@@ -773,7 +790,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 1547
+    .line 1552
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "This method will deadlock if called from the main thread."
@@ -782,13 +799,13 @@
 
     throw v2
 
-    .line 1550
+    .line 1555
     :cond_0
     new-instance v1, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadRequest;
 
     invoke-direct {v1, p2}, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadRequest;-><init>(Ljava/lang/Object;)V
 
-    .line 1551
+    .line 1556
     .local v1, request:Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadRequest;
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mMainThreadHandler:Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadHandler;
 
@@ -796,14 +813,14 @@
 
     move-result-object v0
 
-    .line 1552
+    .line 1557
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1555
+    .line 1560
     monitor-enter v1
 
-    .line 1556
+    .line 1561
     :goto_0
     :try_start_0
     iget-object v2, v1, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadRequest;->result:Ljava/lang/Object;
@@ -812,7 +829,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1558
+    .line 1563
     :try_start_1
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
     :try_end_1
@@ -821,25 +838,25 @@
 
     goto :goto_0
 
-    .line 1559
+    .line 1564
     :catch_0
     move-exception v2
 
     goto :goto_0
 
-    .line 1563
+    .line 1568
     :cond_1
     :try_start_2
     monitor-exit v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1564
+    .line 1569
     iget-object v2, v1, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadRequest;->result:Ljava/lang/Object;
 
     return-object v2
 
-    .line 1563
+    .line 1568
     :catchall_0
     move-exception v2
 
@@ -856,12 +873,12 @@
     .parameter "command"
 
     .prologue
-    .line 1574
+    .line 1579
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mMainThreadHandler:Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadHandler;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal$MainThreadHandler;->sendEmptyMessage(I)Z
 
-    .line 1575
+    .line 1580
     return-void
 .end method
 
@@ -873,12 +890,12 @@
     .parameter "autn"
 
     .prologue
-    .line 2232
+    .line 2241
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 2233
+    .line 2242
     :cond_0
     const-string v2, "HtcTelephonyInternal"
 
@@ -912,38 +929,38 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2234
+    .line 2243
     const/4 v1, 0x0
 
-    .line 2242
+    .line 2251
     :goto_0
     return-object v1
 
-    .line 2236
+    .line 2245
     :cond_1
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2237
+    .line 2246
     .local v0, argument:Landroid/os/Bundle;
     const-string v2, "rand"
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 2238
+    .line 2247
     const-string v2, "autn"
 
     invoke-virtual {v0, v2, p2}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
 
-    .line 2240
+    .line 2249
     const/16 v2, 0xaf
 
     invoke-direct {p0, v2, v0}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2242
+    .line 2251
     .local v1, result:Ljava/lang/Object;
     instance-of v2, v1, Landroid/os/Bundle;
 
@@ -970,25 +987,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2102
+    .line 2111
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->hasISIM()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2103
+    .line 2112
     const-string v2, "HtcTelephonyInternal"
 
     const-string v3, "calculateAkaResponse(): No valid ISIM!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2109
+    .line 2118
     :goto_0
     return-object v1
 
-    .line 2107
+    .line 2116
     :cond_0
     const/16 v2, 0x8c
 
@@ -1000,7 +1017,7 @@
 
     move-result-object v0
 
-    .line 2109
+    .line 2118
     .local v0, result:Ljava/lang/Object;
     instance-of v2, v0, Landroid/os/Bundle;
 
@@ -1029,25 +1046,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2119
+    .line 2128
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->hasISIM()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2120
+    .line 2129
     const-string v2, "HtcTelephonyInternal"
 
     const-string v3, "calculateGbaBootstrappingResponse(): No valid ISIM!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2126
+    .line 2135
     :goto_0
     return-object v1
 
-    .line 2124
+    .line 2133
     :cond_0
     const/16 v2, 0x8e
 
@@ -1059,7 +1076,7 @@
 
     move-result-object v0
 
-    .line 2126
+    .line 2135
     .local v0, result:Ljava/lang/Object;
     instance-of v2, v0, Landroid/os/Bundle;
 
@@ -1087,25 +1104,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2136
+    .line 2145
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->hasISIM()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2137
+    .line 2146
     const-string v2, "HtcTelephonyInternal"
 
     const-string v3, "requestImsAkaAuthentication(): No valid ISIM!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2143
+    .line 2152
     :goto_0
     return-object v1
 
-    .line 2141
+    .line 2150
     :cond_0
     const/16 v2, 0x90
 
@@ -1113,7 +1130,7 @@
 
     move-result-object v0
 
-    .line 2143
+    .line 2152
     .local v0, result:Ljava/lang/Object;
     if-eqz v0, :cond_1
 
@@ -1139,7 +1156,7 @@
     .parameter "channel"
 
     .prologue
-    .line 1894
+    .line 1903
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -1148,7 +1165,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 1895
+    .line 1904
     new-instance v1, Ljava/lang/SecurityException;
 
     const-string v2, "Only Smartcard API may access UICC"
@@ -1157,7 +1174,7 @@
 
     throw v1
 
-    .line 1897
+    .line 1906
     :cond_0
     const/16 v1, 0x81
 
@@ -1171,7 +1188,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1900
+    .line 1909
     .local v0, err:Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1179,10 +1196,10 @@
 
     if-nez v1, :cond_1
 
-    .line 1901
+    .line 1910
     const/4 v1, 0x1
 
-    .line 1903
+    .line 1912
     :goto_0
     return v1
 
@@ -1196,7 +1213,7 @@
     .locals 0
 
     .prologue
-    .line 1620
+    .line 1629
     return-void
 .end method
 
@@ -1205,7 +1222,7 @@
     .parameter "enable"
 
     .prologue
-    .line 2928
+    .line 2946
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.CHANGE_NETWORK_STATE"
@@ -1214,19 +1231,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2930
+    .line 2948
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 2931
+    .line 2949
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p1, v1}, Lcom/android/internal/telephony/CommandsInterface;->enablePS_W2G_Handover(ILandroid/os/Message;)V
 
-    .line 2933
+    .line 2951
     :cond_0
     return-void
 .end method
@@ -1236,7 +1253,7 @@
     .parameter "on"
 
     .prologue
-    .line 2726
+    .line 2735
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.CHANGE_NETWORK_STATE"
@@ -1245,12 +1262,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2729
+    .line 2738
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 2730
+    .line 2739
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1273,7 +1290,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2731
+    .line 2740
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz p1, :cond_1
@@ -1285,19 +1302,19 @@
 
     invoke-interface {v1, v0, v2}, Lcom/android/internal/telephony/CommandsInterface;->enableRegistrationState_wifi_call(ILandroid/os/Message;)V
 
-    .line 2733
+    .line 2742
     if-eqz p1, :cond_0
 
-    .line 2734
+    .line 2743
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->wifi2GRetry()V
 
-    .line 2738
+    .line 2747
     :cond_0
     return-void
 
-    .line 2731
+    .line 2740
     :cond_1
     const/4 v0, 0x0
 
@@ -1308,13 +1325,13 @@
     .locals 3
 
     .prologue
-    .line 1625
+    .line 1634
     :try_start_0
     invoke-super {p0}, Lcom/android/internal/telephony/IHtcTelephonyInternal$Stub;->finalize()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1629
+    .line 1638
     :goto_0
     const-string v1, "HtcTelephonyInternal"
 
@@ -1322,14 +1339,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1630
+    .line 1639
     return-void
 
-    .line 1626
+    .line 1635
     :catch_0
     move-exception v0
 
-    .line 1627
+    .line 1636
     .local v0, throwable:Ljava/lang/Throwable;
     const-string v1, "HtcTelephonyInternal"
 
@@ -1346,7 +1363,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 2831
+    .line 2840
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1355,33 +1372,33 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 2832
+    .line 2841
     .local v1, mapResult:Ljava/lang/Integer;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2833
+    .line 2842
     .local v0, bundleResult:Landroid/os/Bundle;
     if-eqz v1, :cond_0
 
-    .line 2835
+    .line 2844
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 2855
+    .line 2864
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 2861
+    .line 2870
     :goto_0
     return-object v2
 
-    .line 2851
+    .line 2860
     :sswitch_0
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
@@ -1391,7 +1408,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2857
+    .line 2866
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1406,10 +1423,10 @@
     .restart local v0       #bundleResult:Landroid/os/Bundle;
     move-object v2, v0
 
-    .line 2858
+    .line 2867
     goto :goto_0
 
-    .line 2861
+    .line 2870
     :cond_0
     new-instance v2, Landroid/os/Bundle;
 
@@ -1417,7 +1434,7 @@
 
     goto :goto_0
 
-    .line 2835
+    .line 2844
     :sswitch_data_0
     .sparse-switch
         0xab -> :sswitch_0
@@ -1441,7 +1458,9 @@
     .parameter "bundle"
 
     .prologue
-    .line 2866
+    const/4 v4, 0x0
+
+    .line 2875
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->methodMap:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1450,43 +1469,41 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 2867
+    .line 2876
     .local v1, mapResult:Ljava/lang/Integer;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2868
+    .line 2877
     .local v0, bundleResult:Landroid/os/Bundle;
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 2870
+    .line 2879
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     sparse-switch v2, :sswitch_data_0
 
-    .line 2878
+    .line 2896
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 2884
+    .line 2902
     :goto_0
     return-object v2
 
-    .line 2874
+    .line 2883
     :sswitch_0
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MODIFY_PHONE_STATE"
 
-    const/4 v4, 0x0
-
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2880
+    .line 2898
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1501,10 +1518,28 @@
     .restart local v0       #bundleResult:Landroid/os/Bundle;
     move-object v2, v0
 
-    .line 2881
+    .line 2899
     goto :goto_0
 
-    .line 2884
+    .line 2888
+    :sswitch_1
+    iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
+
+    const-string v3, "android.permission.MODIFY_PHONE_STATE"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2889
+    iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+
+    if-eqz v2, :cond_0
+
+    .line 2890
+    iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v2, v4}, Lcom/android/internal/telephony/CommandsInterface;->sendUserTrialFeedback(Landroid/os/Message;)V
+
+    .line 2892
     :cond_0
     new-instance v2, Landroid/os/Bundle;
 
@@ -1512,11 +1547,20 @@
 
     goto :goto_0
 
-    .line 2870
+    .line 2902
+    :cond_1
+    new-instance v2, Landroid/os/Bundle;
+
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+
+    goto :goto_0
+
+    .line 2879
     :sswitch_data_0
     .sparse-switch
         0x6ae -> :sswitch_0
         0x6b6 -> :sswitch_0
+        0x6bb -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -1525,7 +1569,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 2759
+    .line 2768
     const/4 v0, 0x0
 
     return v0
@@ -1535,7 +1579,7 @@
     .locals 3
 
     .prologue
-    .line 2465
+    .line 2474
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1544,7 +1588,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2466
+    .line 2475
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaMin()Ljava/lang/String;
@@ -1559,7 +1603,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 2905
+    .line 2923
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1568,7 +1612,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2908
+    .line 2926
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getDetailIccStatusExt(I)[I
@@ -1584,7 +1628,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2937
+    .line 2955
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.ACCESS_NETWORK_STATE"
@@ -1593,14 +1637,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2939
+    .line 2957
     const/16 v2, 0xad
 
     invoke-direct {p0, v2, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 2940
+    .line 2958
     .local v0, returnResult:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/Exception;
 
@@ -1608,7 +1652,7 @@
 
     move-object v0, v1
 
-    .line 2943
+    .line 2961
     .end local v0           #returnResult:Ljava/lang/Object;
     :goto_0
     return-object v0
@@ -1627,7 +1671,7 @@
     .locals 3
 
     .prologue
-    .line 2451
+    .line 2460
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1636,7 +1680,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2452
+    .line 2461
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getEsn()Ljava/lang/String;
@@ -1650,7 +1694,7 @@
     .locals 3
 
     .prologue
-    .line 2280
+    .line 2289
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1659,19 +1703,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2281
+    .line 2290
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     if-eqz v0, :cond_0
 
-    .line 2282
+    .line 2291
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getGlobalDataRoamingOption()I
 
     move-result v0
 
-    .line 2283
+    .line 2292
     :goto_0
     return v0
 
@@ -1686,7 +1730,7 @@
     .parameter "account"
 
     .prologue
-    .line 2329
+    .line 2338
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1695,7 +1739,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2330
+    .line 2339
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getDeviceId(Ljava/lang/String;)Ljava/lang/String;
@@ -1710,7 +1754,7 @@
     .parameter "account"
 
     .prologue
-    .line 2345
+    .line 2354
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1719,7 +1763,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2346
+    .line 2355
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceSvn()Ljava/lang/String;
@@ -1734,7 +1778,7 @@
     .parameter "account"
 
     .prologue
-    .line 2375
+    .line 2384
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1743,7 +1787,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2376
+    .line 2385
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLine1Number()Ljava/lang/String;
@@ -1758,7 +1802,7 @@
     .parameter "account"
 
     .prologue
-    .line 2405
+    .line 2414
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1767,7 +1811,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2406
+    .line 2415
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getLine1AlphaTag(Ljava/lang/String;)Ljava/lang/String;
@@ -1782,7 +1826,7 @@
     .parameter "account"
 
     .prologue
-    .line 2390
+    .line 2399
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1791,7 +1835,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2391
+    .line 2400
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getLine1Number(Ljava/lang/String;)Ljava/lang/String;
@@ -1806,7 +1850,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 2769
+    .line 2778
     const/4 v0, 0x0
 
     return v0
@@ -1817,7 +1861,7 @@
     .parameter "account"
 
     .prologue
-    .line 2360
+    .line 2369
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1826,7 +1870,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2361
+    .line 2370
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getSubscriberId(Ljava/lang/String;)Ljava/lang/String;
@@ -1841,7 +1885,7 @@
     .parameter "account"
 
     .prologue
-    .line 2436
+    .line 2445
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -1850,7 +1894,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2437
+    .line 2446
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMailAlphaTag()Ljava/lang/String;
@@ -1865,7 +1909,7 @@
     .parameter "account"
 
     .prologue
-    .line 2420
+    .line 2429
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PHONE_STATE"
@@ -1874,7 +1918,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2421
+    .line 2430
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getVoiceMailNumber()Ljava/lang/String;
@@ -1885,7 +1929,7 @@
 
     move-result-object v0
 
-    .line 2422
+    .line 2431
     .local v0, number:Ljava/lang/String;
     return-object v0
 .end method
@@ -1894,7 +1938,7 @@
     .locals 1
 
     .prologue
-    .line 1913
+    .line 1922
     iget v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->lastError:I
 
     return v0
@@ -1905,7 +1949,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 2749
+    .line 2758
     const/4 v0, 0x0
 
     return v0
@@ -1917,7 +1961,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2951
+    .line 2969
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.READ_PHONE_STATE"
@@ -1926,14 +1970,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2953
+    .line 2971
     const/16 v2, 0xb1
 
     invoke-direct {p0, v2, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 2954
+    .line 2972
     .local v0, returnResult:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/Exception;
 
@@ -1941,7 +1985,7 @@
 
     move-object v0, v1
 
-    .line 2957
+    .line 2975
     .end local v0           #returnResult:Ljava/lang/Object;
     :goto_0
     return-object v0
@@ -1960,7 +2004,7 @@
     .locals 3
 
     .prologue
-    .line 2526
+    .line 2535
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1985,7 +2029,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2527
+    .line 2536
     iget-boolean v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->rejectAll:Z
 
     return v0
@@ -1995,21 +2039,21 @@
     .locals 2
 
     .prologue
-    .line 2635
+    .line 2644
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2636
+    .line 2645
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2637
+    .line 2646
     invoke-interface {v0}, Lcom/android/internal/telephony/cat/AppInterface;->getScreenBusyState()Z
 
     move-result v1
 
-    .line 2639
+    .line 2648
     :goto_0
     return v1
 
@@ -2026,14 +2070,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2082
+    .line 2091
     if-ltz p1, :cond_0
 
     const/4 v2, 0x1
 
     if-le p1, v2, :cond_1
 
-    .line 2083
+    .line 2092
     :cond_0
     const-string v2, "HtcTelephonyInternal"
 
@@ -2059,11 +2103,11 @@
 
     move-object v0, v1
 
-    .line 2089
+    .line 2098
     :goto_0
     return-object v0
 
-    .line 2087
+    .line 2096
     :cond_1
     const/16 v2, 0x83
 
@@ -2075,7 +2119,7 @@
 
     move-result-object v0
 
-    .line 2089
+    .line 2098
     .local v0, result:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
@@ -2091,11 +2135,87 @@
     goto :goto_0
 .end method
 
+.method public gsmAuthentication([B)Landroid/os/Bundle;
+    .locals 5
+    .parameter "rand"
+
+    .prologue
+    .line 2258
+    if-nez p1, :cond_0
+
+    .line 2259
+    const-string v2, "HtcTelephonyInternal"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Inavlid data: rand: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2260
+    const/4 v1, 0x0
+
+    .line 2267
+    :goto_0
+    return-object v1
+
+    .line 2262
+    :cond_0
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 2263
+    .local v0, argument:Landroid/os/Bundle;
+    const-string v2, "rand"
+
+    invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
+
+    .line 2265
+    const/16 v2, 0xb3
+
+    invoke-direct {p0, v2, v0}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 2267
+    .local v1, result:Ljava/lang/Object;
+    instance-of v2, v1, Landroid/os/Bundle;
+
+    if-eqz v2, :cond_1
+
+    check-cast v1, Landroid/os/Bundle;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v1, Landroid/os/Bundle;
+
+    .end local v1           #result:Ljava/lang/Object;
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    goto :goto_0
+.end method
+
 .method public hello_getDeviceId()Ljava/lang/String;
     .locals 3
 
     .prologue
-    .line 1635
+    .line 1644
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -2104,7 +2224,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1636
+    .line 1645
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceId()Ljava/lang/String;
@@ -2118,19 +2238,19 @@
     .locals 2
 
     .prologue
-    .line 2694
+    .line 2703
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2695
+    .line 2704
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2696
+    .line 2705
     const/4 v1, 0x1
 
-    .line 2698
+    .line 2707
     :goto_0
     return v1
 
@@ -2144,44 +2264,44 @@
     .locals 3
 
     .prologue
-    .line 2536
+    .line 2545
     const-string v1, "HtcTelephonyInternal"
 
     const-string v2, "[NFC] launchCallForwardingSettings"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2539
+    .line 2548
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     if-eqz v1, :cond_0
 
-    .line 2540
+    .line 2549
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2541
+    .line 2550
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2542
+    .line 2551
     const-string v1, "com.android.phone"
 
     const-string v2, "com.android.phone.CallFeaturesSetting"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2543
+    .line 2552
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 2545
+    .line 2554
     .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     return-void
@@ -2192,19 +2312,19 @@
     .parameter "keyCode"
 
     .prologue
-    .line 2623
+    .line 2632
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2624
+    .line 2633
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2626
+    .line 2635
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/cat/AppInterface;->notifyUserActivity(I)V
 
-    .line 2628
+    .line 2637
     :cond_0
     return-void
 .end method
@@ -2214,19 +2334,19 @@
     .parameter "busy"
 
     .prologue
-    .line 2603
+    .line 2612
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2604
+    .line 2613
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2606
+    .line 2615
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/cat/AppInterface;->updateIdleScreenState(Z)V
 
-    .line 2608
+    .line 2617
     :cond_0
     return-void
 .end method
@@ -2236,7 +2356,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 2647
+    .line 2656
     new-instance v1, Lcom/android/internal/telephony/cat/CatResponseMessage;
 
     const-string v2, "CMD_DETATIL"
@@ -2249,7 +2369,7 @@
 
     invoke-direct {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;-><init>(Lcom/android/internal/telephony/cat/CommandDetails;)V
 
-    .line 2648
+    .line 2657
     .local v1, resMsg:Lcom/android/internal/telephony/cat/CatResponseMessage;
     const-string v2, "RES_CODE"
 
@@ -2263,7 +2383,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setResultCode(Lcom/android/internal/telephony/cat/ResultCode;)V
 
-    .line 2649
+    .line 2658
     const-string v2, "MENU_SELECT"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -2272,7 +2392,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setMenuSelection(I)V
 
-    .line 2650
+    .line 2659
     const-string v2, "INPUT"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -2281,7 +2401,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setInput(Ljava/lang/String;)V
 
-    .line 2651
+    .line 2660
     const-string v2, "YES_NO"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -2290,7 +2410,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setYesNo(Z)V
 
-    .line 2652
+    .line 2661
     const-string v2, "CONFIRM"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -2299,19 +2419,19 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/telephony/cat/CatResponseMessage;->setConfirmation(Z)V
 
-    .line 2655
+    .line 2664
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2656
+    .line 2665
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2657
+    .line 2666
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/cat/AppInterface;->onCmdResponse(Lcom/android/internal/telephony/cat/CatResponseMessage;)V
 
-    .line 2659
+    .line 2668
     :cond_0
     return-void
 .end method
@@ -2322,19 +2442,19 @@
     .parameter "enable"
 
     .prologue
-    .line 2667
+    .line 2676
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2668
+    .line 2677
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2669
+    .line 2678
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/cat/AppInterface;->onHandleEventList(IZ)V
 
-    .line 2671
+    .line 2680
     :cond_0
     return-void
 .end method
@@ -2344,30 +2464,30 @@
     .parameter "language"
 
     .prologue
-    .line 2678
+    .line 2687
     new-instance v1, Lcom/android/internal/telephony/cat/EventResponseMessage;
 
     const/4 v2, 0x7
 
     invoke-direct {v1, v2}, Lcom/android/internal/telephony/cat/EventResponseMessage;-><init>(I)V
 
-    .line 2679
+    .line 2688
     .local v1, resMsg:Lcom/android/internal/telephony/cat/EventResponseMessage;
     invoke-virtual {v1, p1}, Lcom/android/internal/telephony/cat/EventResponseMessage;->setLanguage(Ljava/lang/String;)V
 
-    .line 2682
+    .line 2691
     invoke-static {}, Lcom/android/internal/telephony/cat/CatService;->getInstance()Lcom/android/internal/telephony/cat/AppInterface;
 
     move-result-object v0
 
-    .line 2683
+    .line 2692
     .local v0, catInstance:Lcom/android/internal/telephony/cat/AppInterface;
     if-eqz v0, :cond_0
 
-    .line 2684
+    .line 2693
     invoke-interface {v0, v1}, Lcom/android/internal/telephony/cat/AppInterface;->sendEventDownload(Lcom/android/internal/telephony/cat/EventResponseMessage;)V
 
-    .line 2686
+    .line 2695
     :cond_0
     return-void
 .end method
@@ -2377,7 +2497,7 @@
     .parameter "AID"
 
     .prologue
-    .line 1880
+    .line 1889
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -2386,7 +2506,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 1881
+    .line 1890
     new-instance v1, Ljava/lang/SecurityException;
 
     const-string v2, "Only Smartcard API may access UICC"
@@ -2395,7 +2515,7 @@
 
     throw v1
 
-    .line 1883
+    .line 1892
     :cond_0
     const/16 v1, 0x7f
 
@@ -2405,7 +2525,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1885
+    .line 1894
     .local v0, channel:Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2420,14 +2540,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1659
+    .line 1668
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1660
+    .line 1669
     const/16 v0, 0x66
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2451,14 +2571,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1737
+    .line 1746
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1738
+    .line 1747
     const/16 v0, 0x6a
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2482,14 +2602,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1681
+    .line 1690
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1682
+    .line 1691
     const/16 v0, 0x72
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2513,14 +2633,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1748
+    .line 1757
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1749
+    .line 1758
     const/16 v0, 0x76
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2544,14 +2664,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1714
+    .line 1723
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1715
+    .line 1724
     const/16 v0, 0x6e
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2574,7 +2694,7 @@
     .parameter "randu"
 
     .prologue
-    .line 1648
+    .line 1657
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -2583,7 +2703,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1649
+    .line 1658
     const/16 v0, 0x64
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2605,7 +2725,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2813
+    .line 2822
     iget-object v3, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.MANAGE_NETWORK_POLICY"
@@ -2614,12 +2734,12 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2817
+    .line 2826
     const/4 v3, 0x4
 
     new-array v0, v3, [Ljava/lang/Integer;
 
-    .line 2818
+    .line 2827
     .local v0, para:[Ljava/lang/Integer;
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2627,7 +2747,7 @@
 
     aput-object v3, v0, v2
 
-    .line 2819
+    .line 2828
     const/4 v3, 0x1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2636,7 +2756,7 @@
 
     aput-object v4, v0, v3
 
-    .line 2820
+    .line 2829
     const/4 v3, 0x2
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2645,7 +2765,7 @@
 
     aput-object v4, v0, v3
 
-    .line 2821
+    .line 2830
     const/4 v3, 0x3
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2654,14 +2774,14 @@
 
     aput-object v4, v0, v3
 
-    .line 2822
+    .line 2831
     const/16 v3, 0x9e
 
     invoke-direct {p0, v3, v0}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2823
+    .line 2832
     .local v1, result:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/Boolean;
 
@@ -2682,7 +2802,7 @@
     .locals 1
 
     .prologue
-    .line 2046
+    .line 2055
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetBtid()Ljava/lang/String;
 
     move-result-object v0
@@ -2696,7 +2816,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2804
+    .line 2813
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MANAGE_NETWORK_POLICY"
@@ -2705,14 +2825,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2807
+    .line 2816
     const/16 v2, 0x9c
 
     invoke-direct {p0, v2, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 2808
+    .line 2817
     .local v0, result:Ljava/lang/Object;
     instance-of v2, v0, [I
 
@@ -2737,7 +2857,7 @@
     .locals 1
 
     .prologue
-    .line 1960
+    .line 1969
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetDOMAIN()Ljava/lang/String;
 
     move-result-object v0
@@ -2749,7 +2869,7 @@
     .locals 1
 
     .prologue
-    .line 2271
+    .line 2280
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->requestGetGID1()Ljava/lang/String;
@@ -2763,7 +2883,7 @@
     .locals 1
 
     .prologue
-    .line 2016
+    .line 2025
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->hasISIM()Z
 
     move-result v0
@@ -2775,7 +2895,7 @@
     .locals 1
 
     .prologue
-    .line 1950
+    .line 1959
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetIMPI()Ljava/lang/String;
 
     move-result-object v0
@@ -2787,7 +2907,7 @@
     .locals 1
 
     .prologue
-    .line 1970
+    .line 1979
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetIMPU()[Ljava/lang/String;
 
     move-result-object v0
@@ -2800,7 +2920,7 @@
     .parameter "phonetype"
 
     .prologue
-    .line 1991
+    .line 2000
     invoke-static {p1}, Lcom/android/internal/telephony/HtcIsimData;->GetIMSI(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -2812,7 +2932,7 @@
     .locals 1
 
     .prologue
-    .line 2026
+    .line 2035
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->isGBASupported()Z
 
     move-result v0
@@ -2824,7 +2944,7 @@
     .locals 1
 
     .prologue
-    .line 2056
+    .line 2065
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetKeyLifetime()Ljava/lang/String;
 
     move-result-object v0
@@ -2837,7 +2957,7 @@
     .parameter "phonetype"
 
     .prologue
-    .line 2002
+    .line 2011
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -2846,7 +2966,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2003
+    .line 2012
     invoke-static {p1}, Lcom/android/internal/telephony/HtcIsimData;->GetMobileNumber(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -2858,7 +2978,7 @@
     .locals 1
 
     .prologue
-    .line 1980
+    .line 1989
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetPCSCF()Landroid/os/Bundle;
 
     move-result-object v0
@@ -2871,23 +2991,23 @@
     .parameter "ifc_name"
 
     .prologue
-    .line 1804
+    .line 1813
     const/16 v1, 0x7b
 
     invoke-direct {p0, v1, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1805
+    .line 1814
     .local v0, returnResult:Ljava/lang/Object;
     instance-of v1, v0, Ljava/lang/Exception;
 
     if-eqz v1, :cond_0
 
-    .line 1806
+    .line 1815
     const/4 v0, 0x0
 
-    .line 1808
+    .line 1817
     .end local v0           #returnResult:Ljava/lang/Object;
     :goto_0
     return-object v0
@@ -2906,7 +3026,7 @@
     .locals 1
 
     .prologue
-    .line 2036
+    .line 2045
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->GetRand()[B
 
     move-result-object v0
@@ -2918,7 +3038,7 @@
     .locals 1
 
     .prologue
-    .line 2557
+    .line 2566
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->requestGetSIMType()I
@@ -2932,7 +3052,7 @@
     .locals 2
 
     .prologue
-    .line 1794
+    .line 1803
     const/16 v0, 0x78
 
     const/4 v1, 0x0
@@ -2958,7 +3078,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2890
+    .line 2908
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MANAGE_NETWORK_POLICY"
@@ -2967,14 +3087,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2894
+    .line 2912
     const/16 v2, 0xa0
 
     invoke-direct {p0, v2, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 2895
+    .line 2913
     .local v0, returnResult:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/Exception;
 
@@ -2982,7 +3102,7 @@
 
     move-object v0, v1
 
-    .line 2898
+    .line 2916
     .end local v0           #returnResult:Ljava/lang/Object;
     :goto_0
     return-object v0
@@ -3004,10 +3124,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2064
+    .line 2073
     if-nez p1, :cond_0
 
-    .line 2065
+    .line 2074
     const-string v1, "HtcTelephonyInternal"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3030,17 +3150,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2076
+    .line 2085
     :goto_0
     return-object v0
 
-    .line 2069
+    .line 2078
     :cond_0
     sget-object v1, Lcom/android/internal/telephony/HtcIsimData;->mAid:Ljava/lang/String;
 
     if-nez v1, :cond_1
 
-    .line 2070
+    .line 2079
     const-string v1, "HtcTelephonyInternal"
 
     const-string v2, "requestImsAkaAuthentication(): No valid ISIM!"
@@ -3049,7 +3169,7 @@
 
     goto :goto_0
 
-    .line 2074
+    .line 2083
     :cond_1
     const/16 v1, 0x85
 
@@ -3057,7 +3177,7 @@
 
     move-result-object v0
 
-    .line 2076
+    .line 2085
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, Landroid/os/Bundle;
 
@@ -3082,7 +3202,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2480
+    .line 2489
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MODIFY_PHONE_STATE"
@@ -3091,14 +3211,14 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2482
+    .line 2491
     sget-boolean v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->HTC_VOLTE_FLAG:Z
 
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    .line 2483
+    .line 2492
     const/16 v2, 0x88
 
     const/4 v3, 0x0
@@ -3107,7 +3227,7 @@
 
     move-result-object v0
 
-    .line 2484
+    .line 2493
     .local v0, result:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/Boolean;
 
@@ -3120,7 +3240,7 @@
 
     move-result v1
 
-    .line 2486
+    .line 2495
     :cond_0
     return v1
 .end method
@@ -3132,7 +3252,7 @@
     .parameter "chpachallenge"
 
     .prologue
-    .line 1725
+    .line 1734
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.MODIFY_PHONE_STATE"
@@ -3141,7 +3261,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1726
+    .line 1735
     const/4 v1, 0x3
 
     new-array v0, v1, [Ljava/lang/String;
@@ -3158,7 +3278,7 @@
 
     aput-object p3, v0, v1
 
-    .line 1727
+    .line 1736
     .local v0, paraMD5:[Ljava/lang/String;
     const/16 v1, 0x68
 
@@ -3176,7 +3296,7 @@
     .parameter "randssd"
 
     .prologue
-    .line 1670
+    .line 1679
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -3185,7 +3305,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1671
+    .line 1680
     const/16 v0, 0x70
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -3202,7 +3322,7 @@
     .parameter "authbs"
 
     .prologue
-    .line 1692
+    .line 1701
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -3211,7 +3331,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1693
+    .line 1702
     const/16 v0, 0x74
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -3229,12 +3349,12 @@
     .parameter "mode"
 
     .prologue
-    .line 2500
+    .line 2509
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 2501
+    .line 2510
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3267,14 +3387,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2502
+    .line 2511
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p1, p2, v1}, Lcom/android/internal/telephony/CommandsInterface;->requestSetFastDormancy(IILandroid/os/Message;)V
 
-    .line 2504
+    .line 2513
     :cond_0
     return-void
 .end method
@@ -3290,7 +3410,7 @@
     .parameter "neighbor_pilot_list"
 
     .prologue
-    .line 2786
+    .line 2795
     iget-object v2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v3, "android.permission.MANAGE_NETWORK_POLICY"
@@ -3299,55 +3419,55 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2790
+    .line 2799
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2791
+    .line 2800
     .local v0, bundle:Landroid/os/Bundle;
     const-string v2, "index"
 
     invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2792
+    .line 2801
     const-string v2, "rat"
 
     invoke-virtual {v0, v2, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2793
+    .line 2802
     const-string v2, "sid"
 
     invoke-virtual {v0, v2, p3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2794
+    .line 2803
     const-string v2, "nid"
 
     invoke-virtual {v0, v2, p4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2795
+    .line 2804
     const-string v2, "base_id"
 
     invoke-virtual {v0, v2, p5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2796
+    .line 2805
     const-string v2, "pilot_pn"
 
     invoke-virtual {v0, v2, p6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2797
+    .line 2806
     const-string v2, "neighbor_pilot_list"
 
     invoke-virtual {v0, v2, p7}, Landroid/os/Bundle;->putIntArray(Ljava/lang/String;[I)V
 
-    .line 2798
+    .line 2807
     const/16 v2, 0x9a
 
     invoke-direct {p0, v2, v0}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2799
+    .line 2808
     .local v1, result:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/Boolean;
 
@@ -3376,12 +3496,12 @@
     .parameter "mode"
 
     .prologue
-    .line 2303
+    .line 2312
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 2304
+    .line 2313
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3414,7 +3534,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2308
+    .line 2317
     :cond_0
     return-void
 .end method
@@ -3425,14 +3545,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1703
+    .line 1712
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1704
+    .line 1713
     const/16 v0, 0x6c
 
     invoke-direct {p0, v0, v2}, Lcom/android/internal/telephony/HtcTelephonyInternal;->sendRequest(ILjava/lang/Object;)Ljava/lang/Object;
@@ -3448,7 +3568,7 @@
     .locals 4
 
     .prologue
-    .line 2776
+    .line 2785
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.MANAGE_NETWORK_POLICY"
@@ -3457,7 +3577,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2779
+    .line 2788
     const/16 v1, 0x98
 
     const/4 v2, 0x0
@@ -3466,7 +3586,7 @@
 
     move-result-object v0
 
-    .line 2780
+    .line 2789
     .local v0, result:Ljava/lang/Object;
     instance-of v1, v0, Ljava/lang/Boolean;
 
@@ -3495,7 +3615,7 @@
     .parameter "value"
 
     .prologue
-    .line 2915
+    .line 2933
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
@@ -3506,19 +3626,19 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2916
+    .line 2934
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v0, :cond_0
 
-    .line 2917
+    .line 2935
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p1, p2, v1}, Lcom/android/internal/telephony/CommandsInterface;->requestSetPushMailDormantTime(IILandroid/os/Message;)V
 
-    .line 2922
+    .line 2940
     :cond_0
     return-void
 .end method
@@ -3528,7 +3648,7 @@
     .parameter "enable"
 
     .prologue
-    .line 2565
+    .line 2574
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setDataEnabled(Z)Z
@@ -3545,67 +3665,67 @@
     .parameter "keyLifetime"
 
     .prologue
-    .line 2154
+    .line 2163
     invoke-static {}, Lcom/android/internal/telephony/HtcIsimData;->hasISIM()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2155
+    .line 2164
     const-string v1, "HtcTelephonyInternal"
 
     const-string v2, "setGbaBootstrappingParams(): No valid ISIM!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2169
+    .line 2178
     :goto_0
     return-void
 
-    .line 2158
+    .line 2167
     :cond_0
     if-eqz p1, :cond_1
 
     invoke-static {p1}, Lcom/android/internal/telephony/HtcIsimData;->SetRand([B)V
 
-    .line 2159
+    .line 2168
     :cond_1
     if-eqz p2, :cond_2
 
     invoke-static {p2}, Lcom/android/internal/telephony/HtcIsimData;->SetBtid(Ljava/lang/String;)V
 
-    .line 2160
+    .line 2169
     :cond_2
     if-eqz p3, :cond_3
 
     invoke-static {p3}, Lcom/android/internal/telephony/HtcIsimData;->SetKeyLifetime(Ljava/lang/String;)V
 
-    .line 2162
+    .line 2171
     :cond_3
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 2164
+    .line 2173
     .local v0, os:Ljava/io/ByteArrayOutputStream;
     invoke-direct {p0, v0, p1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->appendGbaParameter(Ljava/io/ByteArrayOutputStream;[B)V
 
-    .line 2165
+    .line 2174
     invoke-virtual {p2}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->appendGbaParameter(Ljava/io/ByteArrayOutputStream;[B)V
 
-    .line 2166
+    .line 2175
     invoke-virtual {p3}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/HtcTelephonyInternal;->appendGbaParameter(Ljava/io/ByteArrayOutputStream;[B)V
 
-    .line 2168
+    .line 2177
     const/16 v1, 0x92
 
     new-instance v2, Lcom/android/internal/telephony/HtcTelephonyInternal$GbaBootStrapParam;
@@ -3628,7 +3748,7 @@
     .parameter "value"
 
     .prologue
-    .line 2288
+    .line 2297
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -3637,17 +3757,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2289
+    .line 2298
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     if-eqz v0, :cond_0
 
-    .line 2290
+    .line 2299
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setGlobalDataRoamingOption(I)V
 
-    .line 2291
+    .line 2300
     :cond_0
     return-void
 .end method
@@ -3657,10 +3777,10 @@
     .parameter "activePhone"
 
     .prologue
-    .line 1814
+    .line 1823
     iput-object p1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    .line 1815
+    .line 1824
     return-void
 .end method
 
@@ -3669,7 +3789,7 @@
     .parameter "enable"
 
     .prologue
-    .line 2582
+    .line 2591
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_NETWORK_POLICY"
@@ -3678,7 +3798,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2585
+    .line 2594
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setPolicyDataEnabled(Z)Z
@@ -3693,12 +3813,12 @@
     .parameter "networkType"
 
     .prologue
-    .line 2710
+    .line 2719
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     if-eqz v1, :cond_0
 
-    .line 2711
+    .line 2720
     const/16 v1, 0x94
 
     new-instance v2, Ljava/lang/Integer;
@@ -3711,7 +3831,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 2712
+    .line 2721
     .local v0, err:Ljava/lang/Integer;
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -3719,10 +3839,10 @@
 
     if-nez v1, :cond_0
 
-    .line 2713
+    .line 2722
     const/4 v1, 0x1
 
-    .line 2716
+    .line 2725
     .end local v0           #err:Ljava/lang/Integer;
     :goto_0
     return v1
@@ -3738,7 +3858,7 @@
     .parameter "reject"
 
     .prologue
-    .line 2515
+    .line 2524
     const-string v0, "HtcTelephonyInternal"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3761,10 +3881,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2516
+    .line 2525
     iput-boolean p1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->rejectAll:Z
 
-    .line 2517
+    .line 2526
     return-void
 .end method
 
@@ -3773,7 +3893,7 @@
     .parameter "enable"
 
     .prologue
-    .line 2573
+    .line 2582
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.CHANGE_NETWORK_STATE"
@@ -3782,7 +3902,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2576
+    .line 2585
     iget-object v0, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setUserDataEnabled(Z)Z
@@ -3802,7 +3922,7 @@
     .parameter "data"
 
     .prologue
-    .line 1861
+    .line 1870
     const/4 v3, 0x0
 
     move-object v0, p0
@@ -3837,7 +3957,7 @@
     .parameter "data"
 
     .prologue
-    .line 1871
+    .line 1880
     invoke-direct/range {p0 .. p7}, Lcom/android/internal/telephony/HtcTelephonyInternal;->exchangeIccAPDU(IIIIIILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -3855,7 +3975,7 @@
     .parameter "filePath"
 
     .prologue
-    .line 1919
+    .line 1928
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -3864,7 +3984,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1920
+    .line 1929
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Only Smartcard API may access UICC"
@@ -3873,7 +3993,7 @@
 
     throw v0
 
-    .line 1922
+    .line 1931
     :cond_0
     const/16 v11, 0x96
 
@@ -3901,31 +4021,31 @@
 
     check-cast v9, Lcom/android/internal/telephony/IccIoResult;
 
-    .line 1925
+    .line 1934
     .local v9, response:Lcom/android/internal/telephony/IccIoResult;
     const/4 v10, 0x0
 
-    .line 1926
+    .line 1935
     .local v10, result:[B
     const/4 v8, 0x2
 
-    .line 1927
+    .line 1936
     .local v8, length:I
     iget-object v0, v9, Lcom/android/internal/telephony/IccIoResult;->payload:[B
 
     if-eqz v0, :cond_1
 
-    .line 1928
+    .line 1937
     iget-object v0, v9, Lcom/android/internal/telephony/IccIoResult;->payload:[B
 
     array-length v0, v0
 
     add-int/lit8 v8, v0, 0x2
 
-    .line 1929
+    .line 1938
     new-array v10, v8, [B
 
-    .line 1930
+    .line 1939
     iget-object v0, v9, Lcom/android/internal/telephony/IccIoResult;->payload:[B
 
     const/4 v1, 0x0
@@ -3938,7 +4058,7 @@
 
     invoke-static {v0, v1, v10, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1935
+    .line 1944
     :goto_0
     add-int/lit8 v0, v8, -0x1
 
@@ -3948,7 +4068,7 @@
 
     aput-byte v1, v10, v0
 
-    .line 1936
+    .line 1945
     add-int/lit8 v0, v8, -0x2
 
     iget v1, v9, Lcom/android/internal/telephony/IccIoResult;->sw1:I
@@ -3957,10 +4077,10 @@
 
     aput-byte v1, v10, v0
 
-    .line 1937
+    .line 1946
     return-object v10
 
-    .line 1932
+    .line 1941
     :cond_1
     new-array v10, v8, [B
 
@@ -3973,7 +4093,7 @@
     .parameter "expire"
 
     .prologue
-    .line 1759
+    .line 1768
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.MODIFY_PHONE_STATE"
@@ -3982,30 +4102,30 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1761
+    .line 1770
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ACTION_CW_REGISTRATION_STATE_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1762
+    .line 1771
     .local v0, it:Landroid/content/Intent;
     const-string v1, "cw_reg_state"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1763
+    .line 1772
     const-string v1, "cw_reg_expire"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1764
+    .line 1773
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 1765
+    .line 1774
     return-void
 .end method
 
@@ -4017,7 +4137,7 @@
     .parameter "streamId"
 
     .prologue
-    .line 1774
+    .line 1783
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.MODIFY_PHONE_STATE"
@@ -4026,39 +4146,39 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1776
+    .line 1785
     const-string v1, "cdma.cw.dataip"
 
     invoke-static {v1, p2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1777
+    .line 1786
     const-string v1, "cdma.cw.dataport"
 
     invoke-static {v1, p3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1778
+    .line 1787
     const-string v1, "cdma.cw.streamid"
 
     invoke-static {v1, p4}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1779
+    .line 1788
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ACTION_CW_SIP_INVITE_RESULT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1780
+    .line 1789
     .local v0, it:Landroid/content/Intent;
     const-string v1, "cw_sip_invite_result"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1781
+    .line 1790
     iget-object v1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 1782
+    .line 1791
     return-void
 .end method

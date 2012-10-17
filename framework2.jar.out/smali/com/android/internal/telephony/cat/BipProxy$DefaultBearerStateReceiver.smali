@@ -41,27 +41,27 @@
     .parameter "context"
 
     .prologue
-    .line 1921
+    .line 1914
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 1910
+    .line 1903
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 1911
+    .line 1904
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mSetupMessageLock:Ljava/lang/Object;
 
-    .line 1922
+    .line 1915
     iput-object p2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mContext:Landroid/content/Context;
 
-    .line 1923
+    .line 1916
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mContext:Landroid/content/Context;
 
     const-string v1, "connectivity"
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mCm:Landroid/net/ConnectivityManager;
 
-    .line 1924
+    .line 1917
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
@@ -83,44 +83,44 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mFilter:Landroid/content/IntentFilter;
 
-    .line 1925
+    .line 1918
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mIsRegistered:Z
 
-    .line 1927
+    .line 1920
     return-void
 .end method
 
 .method private onConnected()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 2011
+    .line 2004
     const/4 v1, 0x0
 
-    .line 2012
+    .line 2005
     .local v1, msg:Landroid/os/Message;
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mSetupMessageLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 2013
+    .line 2006
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
     if-nez v2, :cond_0
 
-    .line 2014
+    .line 2007
     monitor-exit v3
 
-    .line 2032
+    .line 2027
     :goto_0
     return-void
 
-    .line 2015
+    .line 2008
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
@@ -130,12 +130,12 @@
 
     if-eq v2, v4, :cond_1
 
-    .line 2016
+    .line 2009
     monitor-exit v3
 
     goto :goto_0
 
-    .line 2019
+    .line 2012
     :catchall_0
     move-exception v2
 
@@ -145,25 +145,25 @@
 
     throw v2
 
-    .line 2017
+    .line 2010
     :cond_1
     :try_start_1
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 2018
+    .line 2011
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 2019
+    .line 2012
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2022
+    .line 2015
     const/4 v0, 0x0
 
-    .line 2023
+    .line 2016
     .local v0, cid:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
@@ -171,20 +171,20 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 2024
+    .line 2017
     const-string v0, "-1"
 
-    .line 2029
+    .line 2024
     :cond_2
     :goto_1
-    invoke-static {v1, v0, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
+    invoke-static {v1, v0, v6}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2030
+    .line 2025
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 2025
+    .line 2018
     :cond_3
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
@@ -192,8 +192,23 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 2026
+    .line 2019
     const-string v0, "0"
+
+    .line 2021
+    iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
+
+    iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
+
+    const/16 v4, 0xf
+
+    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/cat/BipProxy;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v3
+
+    const-wide/32 v4, 0xd6d8
+
+    invoke-virtual {v2, v3, v4, v5}, Lcom/android/internal/telephony/cat/BipProxy;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_1
 .end method
@@ -204,38 +219,38 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 1974
+    .line 1967
     const/4 v2, 0x0
 
-    .line 1975
+    .line 1968
     .local v2, msg:Landroid/os/Message;
     const/4 v1, 0x0
 
-    .line 1977
+    .line 1970
     .local v1, dropped:Z
     iget-object v4, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mSetupMessageLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 1978
+    .line 1971
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
     if-nez v3, :cond_0
 
-    .line 1980
+    .line 1973
     const/4 v1, 0x1
 
-    .line 1990
+    .line 1983
     :goto_0
     monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1993
+    .line 1986
     if-eqz v1, :cond_2
 
-    .line 1994
+    .line 1987
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     iget v4, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mChannel:I
@@ -247,7 +262,7 @@
     #calls: Lcom/android/internal/telephony/cat/BipProxy;->sendChannelStatusEvent(I)V
     invoke-static {v3, v4}, Lcom/android/internal/telephony/cat/BipProxy;->access$500(Lcom/android/internal/telephony/cat/BipProxy;I)V
 
-    .line 1995
+    .line 1988
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     iget v4, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mChannel:I
@@ -255,11 +270,11 @@
     #calls: Lcom/android/internal/telephony/cat/BipProxy;->cleanupBipChannel(I)V
     invoke-static {v3, v4}, Lcom/android/internal/telephony/cat/BipProxy;->access$800(Lcom/android/internal/telephony/cat/BipProxy;I)V
 
-    .line 2007
+    .line 2000
     :goto_1
     return-void
 
-    .line 1982
+    .line 1975
     :cond_0
     :try_start_1
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
@@ -270,23 +285,23 @@
 
     if-eq v3, v5, :cond_1
 
-    .line 1984
+    .line 1977
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 1986
+    .line 1979
     :cond_1
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 1987
+    .line 1980
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
     goto :goto_0
 
-    .line 1990
+    .line 1983
     :catchall_0
     move-exception v3
 
@@ -296,11 +311,11 @@
 
     throw v3
 
-    .line 2001
+    .line 1994
     :cond_2
     const/4 v0, 0x0
 
-    .line 2002
+    .line 1995
     .local v0, csfe:Lcom/android/internal/telephony/cat/BipProxy$ConnectionSetupFailedException;
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
@@ -308,7 +323,7 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 2003
+    .line 1996
     new-instance v0, Lcom/android/internal/telephony/cat/BipProxy$ConnectionSetupFailedException;
 
     .end local v0           #csfe:Lcom/android/internal/telephony/cat/BipProxy$ConnectionSetupFailedException;
@@ -318,12 +333,12 @@
 
     invoke-direct {v0, v3, v4}, Lcom/android/internal/telephony/cat/BipProxy$ConnectionSetupFailedException;-><init>(Lcom/android/internal/telephony/cat/BipProxy;Ljava/lang/String;)V
 
-    .line 2005
+    .line 1998
     .restart local v0       #csfe:Lcom/android/internal/telephony/cat/BipProxy$ConnectionSetupFailedException;
     :cond_3
     invoke-static {v2, v6, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2006
+    .line 1999
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_1
@@ -333,7 +348,7 @@
     .locals 0
 
     .prologue
-    .line 2036
+    .line 2031
     return-void
 .end method
 
@@ -343,21 +358,19 @@
     .locals 1
 
     .prologue
-    .line 1959
+    .line 1952
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     return-object v0
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 7
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v7, 0x0
-
-    .line 2040
+    .line 2035
     const-string v5, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -370,21 +383,23 @@
 
     if-nez v5, :cond_1
 
-    .line 2094
+    .line 2085
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 2045
+    .line 2040
     :cond_1
     const-string v5, "noConnectivity"
 
-    invoke-virtual {p2, v5, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    const/4 v6, 0x0
+
+    invoke-virtual {p2, v5, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v2
 
-    .line 2046
+    .line 2041
     .local v2, noConnection:Z
     const-string v5, "networkInfo"
 
@@ -394,7 +409,7 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    .line 2047
+    .line 2042
     .local v1, netInfo:Landroid/net/NetworkInfo;
     const-string v5, "otherNetwork"
 
@@ -404,77 +419,62 @@
 
     check-cast v3, Landroid/net/NetworkInfo;
 
-    .line 2049
+    .line 2044
     .local v3, otherNetInfo:Landroid/net/NetworkInfo;
     const/16 v0, 0x21
 
-    .line 2050
+    .line 2046
     .local v0, conn_type:I
-    const/4 v5, 0x1
-
-    const-string v6, "ro.stk.fakeapn"
-
-    invoke-static {v6, v7}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v6
-
-    if-ne v5, v6, :cond_2
-
-    .line 2051
-    const/4 v0, 0x2
-
-    .line 2055
-    :cond_2
     iget-object v5, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     sget-object v6, Lcom/android/internal/telephony/cat/BipProxy$BipType;->DEFAULT_BIP:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
-    if-ne v5, v6, :cond_5
+    if-ne v5, v6, :cond_4
 
-    .line 2058
-    if-nez v2, :cond_3
+    .line 2049
+    if-nez v2, :cond_2
 
-    .line 2059
+    .line 2050
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onConnected()V
 
     goto :goto_0
 
-    .line 2060
-    :cond_3
-    if-eqz v3, :cond_4
+    .line 2051
+    :cond_2
+    if-eqz v3, :cond_3
 
-    .line 2061
+    .line 2052
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onStillConnecting()V
 
     goto :goto_0
 
-    .line 2063
-    :cond_4
+    .line 2054
+    :cond_3
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onDisconnected()V
 
     goto :goto_0
 
-    .line 2065
-    :cond_5
+    .line 2056
+    :cond_4
     iget-object v5, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     sget-object v6, Lcom/android/internal/telephony/cat/BipProxy$BipType;->SPECIFIC_BIP:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     if-ne v5, v6, :cond_0
 
-    .line 2066
+    .line 2057
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v5
 
     if-ne v5, v0, :cond_0
 
-    .line 2067
+    .line 2058
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
 
     move-result-object v4
 
-    .line 2068
+    .line 2059
     .local v4, state:Landroid/net/NetworkInfo$State;
     sget-object v5, Lcom/android/internal/telephony/cat/BipProxy$1;->$SwitchMap$android$net$NetworkInfo$State:[I
 
@@ -488,25 +488,25 @@
 
     goto :goto_0
 
-    .line 2071
+    .line 2062
     :pswitch_1
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onConnected()V
 
     goto :goto_0
 
-    .line 2075
+    .line 2066
     :pswitch_2
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onStillConnecting()V
 
     goto :goto_0
 
-    .line 2085
+    .line 2076
     :pswitch_3
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->onDisconnected()V
 
     goto :goto_0
 
-    .line 2068
+    .line 2059
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -523,13 +523,13 @@
     .parameter "channel"
 
     .prologue
-    .line 1953
+    .line 1946
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mBearerType:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
-    .line 1954
+    .line 1947
     iput p2, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mChannel:I
 
-    .line 1955
+    .line 1948
     return-void
 .end method
 
@@ -538,22 +538,22 @@
     .parameter "msg"
 
     .prologue
-    .line 1964
+    .line 1957
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mSetupMessageLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1966
+    .line 1959
     :try_start_0
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 1967
+    .line 1960
     monitor-exit v1
 
-    .line 1970
+    .line 1963
     return-void
 
-    .line 1967
+    .line 1960
     :catchall_0
     move-exception v0
 
@@ -568,16 +568,16 @@
     .locals 2
 
     .prologue
-    .line 1930
+    .line 1923
     iget-boolean v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mIsRegistered:Z
 
     if-eqz v0, :cond_0
 
-    .line 1937
+    .line 1930
     :goto_0
     return-void
 
-    .line 1935
+    .line 1928
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mContext:Landroid/content/Context;
 
@@ -585,7 +585,7 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1936
+    .line 1929
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mIsRegistered:Z
@@ -597,27 +597,27 @@
     .locals 1
 
     .prologue
-    .line 1940
+    .line 1933
     iget-boolean v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mIsRegistered:Z
 
     if-nez v0, :cond_0
 
-    .line 1948
+    .line 1941
     :goto_0
     return-void
 
-    .line 1945
+    .line 1938
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1946
+    .line 1939
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mOngoingSetupMessage:Landroid/os/Message;
 
-    .line 1947
+    .line 1940
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/cat/BipProxy$DefaultBearerStateReceiver;->mIsRegistered:Z

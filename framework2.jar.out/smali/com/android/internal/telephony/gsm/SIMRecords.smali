@@ -254,6 +254,8 @@
 
 .field private mValidSPN:Z
 
+.field mUsimServiceTable:Lcom/android/internal/telephony/gsm/UsimServiceTable;
+
 .field mVmConfig:Lcom/android/internal/telephony/gsm/VoiceMailConstants;
 
 .field private mloadCompleted:Z
@@ -3352,27 +3354,27 @@
 
     .line 3489
     :cond_2
-    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
+    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SIMRecords;->getOperatorNumeric()Ljava/lang/String;
 
+    move-result-object v5
+
+    invoke-virtual {v6, v5}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
+
+    invoke-virtual {v5, p1}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
+    invoke-static {v6, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v6, p1}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;
+    move-result v6
 
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_3
 
     move v3, v4
 
@@ -3744,7 +3746,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/IccRecords;->spn:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spn:Ljava/lang/String;
 
@@ -3758,7 +3760,7 @@
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spnDisplayCondition:I
 
-    .line 3017
+    .line 3131
     :cond_0
     return-void
 .end method
@@ -9546,6 +9548,18 @@
 
     .line 2149
     .restart local v12       #ar:Landroid/os/AsyncResult;
+    iget-object v3, v12, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    check-cast v3, [B
+
+    move-object v0, v3
+
+    check-cast v0, [B
+
+    move-object v11, v0
+
+
+    .restart local v11       #data:[B
     iget-object v3, v12, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v3, :cond_2
@@ -9558,6 +9572,40 @@
     move-object/from16 v0, p0
 
     invoke-direct {v0, v3}, Lcom/android/internal/telephony/gsm/SIMRecords;->handleSmses(Ljava/util/ArrayList;)V
+
+    new-instance v2, Lcom/android/internal/telephony/gsm/UsimServiceTable;
+
+    invoke-direct {v2, v11}, Lcom/android/internal/telephony/gsm/UsimServiceTable;-><init>([B)V
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mUsimServiceTable:Lcom/android/internal/telephony/gsm/UsimServiceTable;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "SST: "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/internal/telephony/gsm/SIMRecords;->mUsimServiceTable:Lcom/android/internal/telephony/gsm/UsimServiceTable;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -11044,34 +11092,26 @@
 
     goto/16 :goto_1
 
+    .line 2414
     .end local v12           #ar:Landroid/os/AsyncResult;
     .end local v16           #data:[B
     :pswitch_20
     const/16 v28, 0x1
 
+    .line 2416
     move-object/from16 v0, p1
 
     iget-object v12, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v12, Landroid/os/AsyncResult;
 
+    .line 2418
     .restart local v12       #ar:Landroid/os/AsyncResult;
-    iget-object v3, v12, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
-
-    check-cast v3, [B
-
-    move-object v0, v3
-
-    check-cast v0, [B
-
-    move-object v11, v0
-
-
-    .restart local v11       #data:[B
     iget-object v3, v12, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v3, :cond_2
 
+    .line 2422
     iget-object v3, v12, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v3, [B

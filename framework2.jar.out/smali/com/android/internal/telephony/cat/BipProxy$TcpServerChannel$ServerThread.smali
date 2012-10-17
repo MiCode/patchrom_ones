@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1219
+    .line 1217
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -40,7 +40,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1226
+    .line 1224
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget-object v2, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mSocket:Ljava/net/Socket;
@@ -57,7 +57,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1229
+    .line 1227
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -73,7 +73,7 @@
 
     iput v3, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mChannelStatus:I
 
-    .line 1230
+    .line 1228
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget-object v2, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
@@ -85,7 +85,7 @@
     #calls: Lcom/android/internal/telephony/cat/BipProxy;->sendChannelStatusEvent(I)V
     invoke-static {v2, v3}, Lcom/android/internal/telephony/cat/BipProxy;->access$500(Lcom/android/internal/telephony/cat/BipProxy;I)V
 
-    .line 1235
+    .line 1233
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -101,7 +101,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1243
+    .line 1241
     :goto_0
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -119,7 +119,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1244
+    .line 1242
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     const v3, 0x8000
@@ -136,7 +136,7 @@
 
     iput v3, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mChannelStatus:I
 
-    .line 1245
+    .line 1243
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget-object v2, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
@@ -148,7 +148,7 @@
     #calls: Lcom/android/internal/telephony/cat/BipProxy;->sendChannelStatusEvent(I)V
     invoke-static {v2, v3}, Lcom/android/internal/telephony/cat/BipProxy;->access$500(Lcom/android/internal/telephony/cat/BipProxy;I)V
 
-    .line 1249
+    .line 1247
     :cond_1
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -156,7 +156,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1253
+    .line 1251
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -180,7 +180,7 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1267
+    .line 1265
     :goto_1
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -188,16 +188,16 @@
 
     if-gtz v2, :cond_3
 
-    .line 1285
+    .line 1283
     :cond_2
     :goto_2
     return-void
 
-    .line 1254
+    .line 1252
     :catch_0
     move-exception v1
 
-    .line 1256
+    .line 1254
     .local v1, e:Ljava/io/IOException;
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -205,7 +205,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mSocket:Ljava/net/Socket;
 
-    .line 1258
+    .line 1256
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
@@ -218,7 +218,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mRxBuf:[B
 
-    .line 1259
+    .line 1257
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget-object v3, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
@@ -231,39 +231,39 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mTxBuf:[B
 
-    .line 1260
+    .line 1258
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iput v5, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mRxPos:I
 
-    .line 1261
+    .line 1259
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iput v5, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mRxLen:I
 
-    .line 1262
+    .line 1260
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iput v5, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mTxPos:I
 
-    .line 1263
+    .line 1261
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iput v5, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mTxLen:I
 
     goto :goto_1
 
-    .line 1271
+    .line 1269
     .end local v1           #e:Ljava/io/IOException;
     :cond_3
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iput v5, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mRxPos:I
 
-    .line 1272
+    .line 1270
     const/16 v0, 0xff
 
-    .line 1273
+    .line 1271
     .local v0, available:I
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -271,12 +271,12 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 1274
+    .line 1272
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
     iget v0, v2, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;->mRxLen:I
 
-    .line 1278
+    .line 1276
     :cond_4
     iget-object v2, p0, Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel$ServerThread;->this$1:Lcom/android/internal/telephony/cat/BipProxy$TcpServerChannel;
 
@@ -295,7 +295,7 @@
 
     goto :goto_2
 
-    .line 1237
+    .line 1235
     .end local v0           #available:I
     :catch_1
     move-exception v2

@@ -38,32 +38,32 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2102
+    .line 2093
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2098
+    .line 2089
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
-    .line 2099
+    .line 2090
     iput-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdType:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
-    .line 2100
+    .line 2091
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mChannelId:I
 
-    .line 2103
+    .line 2094
     iput-object p2, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdType:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
-    .line 2104
+    .line 2095
     iput-object p4, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
-    .line 2105
+    .line 2096
     iput p3, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mChannelId:I
 
-    .line 2106
+    .line 2097
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .locals 3
 
     .prologue
-    .line 2112
+    .line 2103
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     #getter for: Lcom/android/internal/telephony/cat/BipProxy;->mBipChannels:[Lcom/android/internal/telephony/cat/BipProxy$BipChannel;
@@ -87,7 +87,7 @@
 
     aget-object v0, v1, v2
 
-    .line 2114
+    .line 2105
     .local v0, curChannel:Lcom/android/internal/telephony/cat/BipProxy$BipChannel;
     sget-object v1, Lcom/android/internal/telephony/cat/BipProxy$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
@@ -101,12 +101,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 2134
+    .line 2125
     :cond_0
     :goto_0
     return-void
 
-    .line 2116
+    .line 2107
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -116,7 +116,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2117
+    .line 2108
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     iget v2, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mChannelId:I
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 2121
+    .line 2112
     :pswitch_1
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 2125
+    .line 2116
     :pswitch_2
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 2128
+    .line 2119
     :pswitch_3
     iget-object v1, p0, Lcom/android/internal/telephony/cat/BipProxy$sendBipCmdRunnable;->mCmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 2114
+    .line 2105
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

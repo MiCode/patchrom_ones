@@ -1390,7 +1390,7 @@
     .parameter "response"
 
     .prologue
-    .line 3178
+    .line 3183
     return-void
 .end method
 
@@ -1400,7 +1400,7 @@
     .parameter "response"
 
     .prologue
-    .line 3173
+    .line 3178
     return-void
 .end method
 
@@ -1546,7 +1546,7 @@
     .parameter "response"
 
     .prologue
-    .line 3194
+    .line 3199
     return-void
 .end method
 
@@ -1760,7 +1760,7 @@
     .parameter "response"
 
     .prologue
-    .line 3189
+    .line 3194
     return-void
 .end method
 
@@ -1769,7 +1769,7 @@
     .parameter "response"
 
     .prologue
-    .line 3184
+    .line 3189
     return-void
 .end method
 
@@ -6093,6 +6093,15 @@
 
     .prologue
     .line 2269
+    return-void
+.end method
+
+.method public sendUserTrialFeedback(Landroid/os/Message;)V
+    .locals 0
+    .parameter "response"
+
+    .prologue
+    .line 3173
     return-void
 .end method
 

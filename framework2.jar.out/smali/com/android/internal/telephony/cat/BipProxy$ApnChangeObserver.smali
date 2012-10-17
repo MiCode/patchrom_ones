@@ -24,10 +24,10 @@
     .parameter
 
     .prologue
-    .line 903
+    .line 901
     iput-object p1, p0, Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
-    .line 904
+    .line 902
     #getter for: Lcom/android/internal/telephony/cat/BipProxy;->mBipHandler:Landroid/os/Handler;
     invoke-static {p1}, Lcom/android/internal/telephony/cat/BipProxy;->access$000(Lcom/android/internal/telephony/cat/BipProxy;)Landroid/os/Handler;
 
@@ -35,7 +35,7 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 905
+    .line 903
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 910
+    .line 908
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     #getter for: Lcom/android/internal/telephony/cat/BipProxy;->mApnObserver:Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 911
+    .line 909
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     #getter for: Lcom/android/internal/telephony/cat/BipProxy;->mContext:Landroid/content/Context;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 912
+    .line 910
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
     const/4 v1, 0x0
@@ -85,7 +85,7 @@
     #setter for: Lcom/android/internal/telephony/cat/BipProxy;->mApnObserver:Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/BipProxy;->access$102(Lcom/android/internal/telephony/cat/BipProxy;Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;)Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;
 
-    .line 915
+    .line 913
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/cat/BipProxy$ApnChangeObserver;->this$0:Lcom/android/internal/telephony/cat/BipProxy;
 
@@ -94,6 +94,6 @@
     #setter for: Lcom/android/internal/telephony/cat/BipProxy;->mApnUpdated:Z
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/BipProxy;->access$302(Lcom/android/internal/telephony/cat/BipProxy;Z)Z
 
-    .line 916
+    .line 914
     return-void
 .end method

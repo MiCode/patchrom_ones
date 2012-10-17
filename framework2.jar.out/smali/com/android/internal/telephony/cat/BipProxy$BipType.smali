@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 99
+    .line 101
     new-instance v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     const-string v1, "NONE_BIP"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;->NONE_BIP:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
-    .line 100
+    .line 102
     new-instance v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     const-string v1, "DEFAULT_BIP"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;->DEFAULT_BIP:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
-    .line 101
+    .line 103
     new-instance v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     const-string v1, "SPECIFIC_BIP"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;->SPECIFIC_BIP:Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
-    .line 98
+    .line 100
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/BipProxy$BipType;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 100
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 98
+    .line 100
     const-class v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 100
     sget-object v0, Lcom/android/internal/telephony/cat/BipProxy$BipType;->$VALUES:[Lcom/android/internal/telephony/cat/BipProxy$BipType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/BipProxy$BipType;->clone()Ljava/lang/Object;

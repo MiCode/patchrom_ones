@@ -15,29 +15,29 @@
 
 
 # static fields
-.field public static final footer_button_width:I = 0x3040004
+.field public static final footer_button_width:I = 0x6040004
 
-.field public static final htctogglebutton_width:I = 0x304000b
+.field public static final htctogglebutton_width:I = 0x604000b
 
-.field public static final img_menu_size:I = 0x3040003
+.field public static final img_menu_size:I = 0x6040003
 
-.field public static final port_seek_bar_layout_height:I = 0x3040002
+.field public static final port_seek_bar_layout_height:I = 0x6040002
 
-.field public static final subtitle_landscape_margin_top:I = 0x3040006
+.field public static final subtitle_landscape_margin_top:I = 0x6040006
 
-.field public static final subtitle_protrait_margin_top:I = 0x3040005
+.field public static final subtitle_protrait_margin_top:I = 0x6040005
 
-.field public static final time_padding_left:I = 0x3040000
+.field public static final time_padding_left:I = 0x6040000
 
-.field public static final time_padding_right:I = 0x3040001
+.field public static final time_padding_right:I = 0x6040001
 
-.field public static final video_thumbnail_frame_height:I = 0x3040008
+.field public static final video_thumbnail_frame_height:I = 0x6040008
 
-.field public static final video_thumbnail_frame_width:I = 0x3040007
+.field public static final video_thumbnail_frame_width:I = 0x6040007
 
-.field public static final video_thumbnail_height:I = 0x304000a
+.field public static final video_thumbnail_height:I = 0x604000a
 
-.field public static final video_thumbnail_width:I = 0x3040009
+.field public static final video_thumbnail_width:I = 0x6040009
 
 
 # direct methods

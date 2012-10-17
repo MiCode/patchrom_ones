@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 342
+    .line 348
     iput-object p1, p0, Lcom/htc/view/VolumePanel$StreamControl;->this$0:Lcom/htc/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
     .parameter "x1"
 
     .prologue
-    .line 342
+    .line 348
     invoke-direct {p0, p1}, Lcom/htc/view/VolumePanel$StreamControl;-><init>(Lcom/htc/view/VolumePanel;)V
 
     return-void

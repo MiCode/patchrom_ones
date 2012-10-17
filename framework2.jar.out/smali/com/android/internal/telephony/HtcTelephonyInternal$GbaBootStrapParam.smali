@@ -30,17 +30,17 @@
     .parameter "mData"
 
     .prologue
-    .line 2216
+    .line 2225
     iput-object p1, p0, Lcom/android/internal/telephony/HtcTelephonyInternal$GbaBootStrapParam;->this$0:Lcom/android/internal/telephony/HtcTelephonyInternal;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2217
+    .line 2226
     iput p2, p0, Lcom/android/internal/telephony/HtcTelephonyInternal$GbaBootStrapParam;->mEfid:I
 
-    .line 2218
+    .line 2227
     iput-object p3, p0, Lcom/android/internal/telephony/HtcTelephonyInternal$GbaBootStrapParam;->mData:[B
 
-    .line 2219
+    .line 2228
     return-void
 .end method

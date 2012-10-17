@@ -1373,7 +1373,7 @@
     .prologue
     .line 1842
     :try_start_0
-    const-string/jumbo v1, "iso-8859-1"
+    const-string v1, "iso-8859-1"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
     :try_end_0

@@ -556,7 +556,7 @@
 
     iget-object v4, p0, Lcom/google/android/mms/pdu/EncodedStringValue;->mData:[B
 
-    const-string/jumbo v5, "iso-8859-1"
+    const-string v5, "iso-8859-1"
 
     invoke-direct {v3, v4, v5}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
     :try_end_1

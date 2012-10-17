@@ -94,26 +94,20 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
-    .line 68
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mHeaders:Lcom/google/android/mms/pdu/PduHeaders;
 
-    .line 73
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mBody:Lcom/google/android/mms/pdu/PduBody;
 
-    .line 103
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
 
-    .line 104
     return-void
 .end method
 
@@ -122,17 +116,17 @@
     .parameter "headers"
 
     .prologue
-    .line 1911
+    .line 1917
     if-nez p0, :cond_0
 
-    .line 1912
+    .line 1918
     const/16 v37, 0x0
 
-    .line 2118
+    .line 2124
     :goto_0
     return v37
 
-    .line 1916
+    .line 1922
     :cond_0
     const/16 v37, 0x8c
 
@@ -144,7 +138,7 @@
 
     move-result v8
 
-    .line 1919
+    .line 1925
     .local v8, messageType:I
     const/16 v37, 0x8d
 
@@ -156,25 +150,25 @@
 
     move-result v9
 
-    .line 1920
+    .line 1926
     .local v9, mmsVersion:I
     if-nez v9, :cond_1
 
-    .line 1922
+    .line 1928
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1926
+    .line 1932
     :cond_1
     packed-switch v8, :pswitch_data_0
 
-    .line 2115
+    .line 2121
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1929
+    .line 1935
     :pswitch_0
     const/16 v37, 0x84
 
@@ -186,16 +180,16 @@
 
     move-result-object v34
 
-    .line 1930
+    .line 1936
     .local v34, srContentType:[B
     if-nez v34, :cond_2
 
-    .line 1931
+    .line 1937
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1935
+    .line 1941
     :cond_2
     const/16 v37, 0x89
 
@@ -207,16 +201,16 @@
 
     move-result-object v35
 
-    .line 1936
+    .line 1942
     .local v35, srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v35, :cond_3
 
-    .line 1937
+    .line 1943
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1941
+    .line 1947
     :cond_3
     const/16 v37, 0x98
 
@@ -228,16 +222,16 @@
 
     move-result-object v36
 
-    .line 1942
+    .line 1948
     .local v36, srTransactionId:[B
     if-nez v36, :cond_15
 
-    .line 1943
+    .line 1949
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1949
+    .line 1955
     .end local v34           #srContentType:[B
     .end local v35           #srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v36           #srTransactionId:[B
@@ -252,16 +246,16 @@
 
     move-result v32
 
-    .line 1950
+    .line 1956
     .local v32, scResponseStatus:I
     if-nez v32, :cond_4
 
-    .line 1951
+    .line 1957
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1955
+    .line 1961
     :cond_4
     const/16 v37, 0x98
 
@@ -273,16 +267,16 @@
 
     move-result-object v33
 
-    .line 1956
+    .line 1962
     .local v33, scTransactionId:[B
     if-nez v33, :cond_15
 
-    .line 1957
+    .line 1963
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1963
+    .line 1969
     .end local v32           #scResponseStatus:I
     .end local v33           #scTransactionId:[B
     :pswitch_2
@@ -296,16 +290,16 @@
 
     move-result-object v10
 
-    .line 1964
+    .line 1970
     .local v10, niContentLocation:[B
     if-nez v10, :cond_5
 
-    .line 1965
+    .line 1971
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1969
+    .line 1975
     :cond_5
     const/16 v37, 0x88
 
@@ -317,7 +311,7 @@
 
     move-result-wide v11
 
-    .line 1970
+    .line 1976
     .local v11, niExpiry:J
     const-wide/16 v37, -0x1
 
@@ -325,12 +319,12 @@
 
     if-nez v37, :cond_6
 
-    .line 1971
+    .line 1977
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1975
+    .line 1981
     :cond_6
     const/16 v37, 0x8a
 
@@ -342,16 +336,16 @@
 
     move-result-object v13
 
-    .line 1976
+    .line 1982
     .local v13, niMessageClass:[B
     if-nez v13, :cond_7
 
-    .line 1977
+    .line 1983
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1981
+    .line 1987
     :cond_7
     const/16 v37, 0x8e
 
@@ -363,7 +357,7 @@
 
     move-result-wide v14
 
-    .line 1982
+    .line 1988
     .local v14, niMessageSize:J
     const-wide/16 v37, -0x1
 
@@ -371,12 +365,12 @@
 
     if-nez v37, :cond_8
 
-    .line 1983
+    .line 1989
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1987
+    .line 1993
     :cond_8
     const/16 v37, 0x98
 
@@ -388,16 +382,16 @@
 
     move-result-object v16
 
-    .line 1988
+    .line 1994
     .local v16, niTransactionId:[B
     if-nez v16, :cond_15
 
-    .line 1989
+    .line 1995
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1995
+    .line 2001
     .end local v10           #niContentLocation:[B
     .end local v11           #niExpiry:J
     .end local v13           #niMessageClass:[B
@@ -414,16 +408,16 @@
 
     move-result v17
 
-    .line 1996
+    .line 2002
     .local v17, nriStatus:I
     if-nez v17, :cond_9
 
-    .line 1997
+    .line 2003
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2001
+    .line 2007
     :cond_9
     const/16 v37, 0x98
 
@@ -435,16 +429,16 @@
 
     move-result-object v18
 
-    .line 2002
+    .line 2008
     .local v18, nriTransactionId:[B
     if-nez v18, :cond_15
 
-    .line 2003
+    .line 2009
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2009
+    .line 2015
     .end local v17           #nriStatus:I
     .end local v18           #nriTransactionId:[B
     :pswitch_4
@@ -458,16 +452,16 @@
 
     move-result-object v19
 
-    .line 2010
+    .line 2016
     .local v19, rcContentType:[B
     if-nez v19, :cond_a
 
-    .line 2011
+    .line 2017
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2015
+    .line 2021
     :cond_a
     const/16 v37, 0x85
 
@@ -479,7 +473,7 @@
 
     move-result-wide v20
 
-    .line 2016
+    .line 2022
     .local v20, rcDate:J
     const-wide/16 v37, -0x1
 
@@ -487,12 +481,12 @@
 
     if-nez v37, :cond_15
 
-    .line 2017
+    .line 2023
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2023
+    .line 2029
     .end local v19           #rcContentType:[B
     .end local v20           #rcDate:J
     :pswitch_5
@@ -506,7 +500,7 @@
 
     move-result-wide v3
 
-    .line 2024
+    .line 2030
     .local v3, diDate:J
     const-wide/16 v37, -0x1
 
@@ -514,12 +508,12 @@
 
     if-nez v37, :cond_b
 
-    .line 2025
+    .line 2031
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2029
+    .line 2035
     :cond_b
     const/16 v37, 0x8b
 
@@ -531,16 +525,16 @@
 
     move-result-object v5
 
-    .line 2030
+    .line 2036
     .local v5, diMessageId:[B
     if-nez v5, :cond_c
 
-    .line 2031
+    .line 2037
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2035
+    .line 2041
     :cond_c
     const/16 v37, 0x95
 
@@ -552,16 +546,16 @@
 
     move-result v6
 
-    .line 2036
+    .line 2042
     .local v6, diStatus:I
     if-nez v6, :cond_d
 
-    .line 2037
+    .line 2043
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2041
+    .line 2047
     :cond_d
     const/16 v37, 0x97
 
@@ -573,16 +567,16 @@
 
     move-result-object v7
 
-    .line 2042
+    .line 2048
     .local v7, diTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v7, :cond_15
 
-    .line 2043
+    .line 2049
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2049
+    .line 2055
     .end local v3           #diDate:J
     .end local v5           #diMessageId:[B
     .end local v6           #diStatus:I
@@ -598,16 +592,16 @@
 
     move-result-object v2
 
-    .line 2050
+    .line 2056
     .local v2, aiTransactionId:[B
     if-nez v2, :cond_15
 
-    .line 2051
+    .line 2057
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2057
+    .line 2063
     .end local v2           #aiTransactionId:[B
     :pswitch_7
     const/16 v37, 0x85
@@ -620,7 +614,7 @@
 
     move-result-wide v22
 
-    .line 2058
+    .line 2064
     .local v22, roDate:J
     const-wide/16 v37, -0x1
 
@@ -628,12 +622,12 @@
 
     if-nez v37, :cond_e
 
-    .line 2059
+    .line 2065
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2063
+    .line 2069
     :cond_e
     const/16 v37, 0x89
 
@@ -645,16 +639,16 @@
 
     move-result-object v24
 
-    .line 2064
+    .line 2070
     .local v24, roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v24, :cond_f
 
-    .line 2065
+    .line 2071
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2069
+    .line 2075
     :cond_f
     const/16 v37, 0x8b
 
@@ -666,16 +660,16 @@
 
     move-result-object v25
 
-    .line 2070
+    .line 2076
     .local v25, roMessageId:[B
     if-nez v25, :cond_10
 
-    .line 2071
+    .line 2077
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2075
+    .line 2081
     :cond_10
     const/16 v37, 0x9b
 
@@ -687,16 +681,16 @@
 
     move-result v26
 
-    .line 2076
+    .line 2082
     .local v26, roReadStatus:I
     if-nez v26, :cond_11
 
-    .line 2077
+    .line 2083
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2081
+    .line 2087
     :cond_11
     const/16 v37, 0x97
 
@@ -708,16 +702,16 @@
 
     move-result-object v27
 
-    .line 2082
+    .line 2088
     .local v27, roTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v27, :cond_15
 
-    .line 2083
+    .line 2089
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2089
+    .line 2095
     .end local v22           #roDate:J
     .end local v24           #roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v25           #roMessageId:[B
@@ -734,16 +728,16 @@
 
     move-result-object v28
 
-    .line 2090
+    .line 2096
     .local v28, rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v28, :cond_12
 
-    .line 2091
+    .line 2097
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2095
+    .line 2101
     :cond_12
     const/16 v37, 0x8b
 
@@ -755,16 +749,16 @@
 
     move-result-object v29
 
-    .line 2096
+    .line 2102
     .local v29, rrMessageId:[B
     if-nez v29, :cond_13
 
-    .line 2097
+    .line 2103
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2101
+    .line 2107
     :cond_13
     const/16 v37, 0x9b
 
@@ -776,16 +770,16 @@
 
     move-result v30
 
-    .line 2102
+    .line 2108
     .local v30, rrReadStatus:I
     if-nez v30, :cond_14
 
-    .line 2103
+    .line 2109
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2107
+    .line 2113
     :cond_14
     const/16 v37, 0x97
 
@@ -797,16 +791,16 @@
 
     move-result-object v31
 
-    .line 2108
+    .line 2114
     .local v31, rrTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v31, :cond_15
 
-    .line 2109
+    .line 2115
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 2118
+    .line 2124
     .end local v28           #rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v29           #rrMessageId:[B
     .end local v30           #rrReadStatus:I
@@ -816,7 +810,7 @@
 
     goto/16 :goto_0
 
-    .line 1926
+    .line 1932
     :pswitch_data_0
     .packed-switch 0x80
         :pswitch_0
@@ -840,7 +834,7 @@
 
     const/4 v2, 0x1
 
-    .line 1875
+    .line 1881
     sget-boolean v4, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v4, :cond_0
@@ -853,7 +847,7 @@
 
     throw v2
 
-    .line 1876
+    .line 1882
     :cond_0
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
@@ -863,27 +857,27 @@
 
     if-nez v4, :cond_2
 
-    .line 1901
+    .line 1907
     :cond_1
     :goto_0
     return v2
 
-    .line 1882
+    .line 1888
     :cond_2
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     if-eqz v4, :cond_3
 
-    .line 1883
+    .line 1889
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentId()[B
 
     move-result-object v0
 
-    .line 1884
+    .line 1890
     .local v0, contentId:[B
     if-eqz v0, :cond_3
 
-    .line 1885
+    .line 1891
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     invoke-static {v4, v0}, Ljava/util/Arrays;->equals([B[B)Z
@@ -894,26 +888,26 @@
 
     move v2, v3
 
-    .line 1886
+    .line 1892
     goto :goto_0
 
-    .line 1892
+    .line 1898
     .end local v0           #contentId:[B
     :cond_3
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     if-eqz v4, :cond_1
 
-    .line 1893
+    .line 1899
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentType()[B
 
     move-result-object v1
 
-    .line 1894
+    .line 1900
     .local v1, contentType:[B
     if-eqz v1, :cond_1
 
-    .line 1895
+    .line 1901
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     invoke-static {v4, v1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -924,7 +918,7 @@
 
     move v2, v3
 
-    .line 1896
+    .line 1902
     goto :goto_0
 .end method
 
@@ -3757,12 +3751,12 @@
 
     const/4 v11, 0x0
 
-    .line 1381
+    .line 1384
     :cond_0
     :goto_0
     return-object v11
 
-    .line 1675
+    .line 1681
     :cond_1
     const/4 v12, 0x1
 
@@ -5310,7 +5304,7 @@
     .catch Ljava/lang/NullPointerException; {:try_start_17 .. :try_end_17} :catch_1f
     .catch Ljava/lang/RuntimeException; {:try_start_17 .. :try_end_17} :catch_20
 
-    .line 1833
+    .line 1839
     :cond_e
     :goto_3
     const/16 v27, 0x99

@@ -553,7 +553,7 @@
 
     invoke-direct/range {v20 .. v21}, Ljava/lang/String;-><init>([B)V
 
-    const-string/jumbo v21, "insert-address-token"
+    const-string v21, "insert-address-token"
 
     invoke-virtual/range {v20 .. v21}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -906,7 +906,7 @@
 
     .line 706
     :cond_e
-    const-string/jumbo v20, "informational"
+    const-string v20, "informational"
 
     invoke-virtual/range {v20 .. v20}, Ljava/lang/String;->getBytes()[B
 
@@ -1085,15 +1085,15 @@
     .prologue
     const/4 v0, 0x5
 
-    .line 1463
+    .line 1466
     if-nez p0, :cond_1
 
-    .line 1481
+    .line 1484
     :cond_0
     :goto_0
     return v0
 
-    .line 1467
+    .line 1470
     :cond_1
     const-string v1, "[0-9]{1,3}\\.{1}[0-9]{1,3}\\.{1}[0-9]{1,3}\\.{1}[0-9]{1,3}"
 
@@ -1103,12 +1103,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1469
+    .line 1472
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 1470
+    .line 1473
     :cond_2
     const-string v1, "\\+?[0-9|\\.|\\-]+"
 
@@ -1118,12 +1118,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 1472
+    .line 1475
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1473
+    .line 1476
     :cond_3
     const-string v1, "[a-zA-Z| ]*\\<{0,1}[a-zA-Z| ]+@{1}[a-zA-Z| ]+\\.{1}[a-zA-Z| ]+\\>{0,1}"
 
@@ -1133,12 +1133,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 1475
+    .line 1478
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 1476
+    .line 1479
     :cond_4
     const-string v1, "[a-fA-F]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}\\:{1}[a-fA-F0-9]{4}"
 
@@ -1148,7 +1148,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1478
+    .line 1481
     const/4 v0, 0x4
 
     goto :goto_0
@@ -1191,12 +1191,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 863
+    .line 866
     :cond_1
     :goto_0
     return v0
 
-    .line 856
+    .line 859
     :cond_2
     const/16 v2, 0x8d
 
@@ -1206,14 +1206,14 @@
 
     if-nez v2, :cond_1
 
-    .line 861
+    .line 864
     const/16 v0, 0x91
 
     invoke-direct {p0, v0}, Lcom/google/android/mms/pdu/PduComposer;->appendHeader(I)I
 
     move v0, v1
 
-    .line 863
+    .line 866
     goto :goto_0
 .end method
 
@@ -1288,7 +1288,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduComposer;->appendShortInteger(I)V
 
-    .line 1052
+    .line 1055
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/android/mms/pdu/PduComposer;->mPdu:Lcom/google/android/mms/pdu/GenericPdu;
@@ -1313,7 +1313,7 @@
     :cond_1
     const-wide/16 v29, 0x0
 
-    .line 1059
+    .line 1062
     move-object/from16 v0, p0
 
     move-wide/from16 v1, v29
@@ -1402,12 +1402,12 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduComposer;->appendTextString([B)V
 
-    .line 1076
+    .line 1079
     :cond_3
     :goto_1
     const/16 v29, 0x89
 
-    .line 1077
+    .line 1080
     move-object/from16 v0, p0
 
     move/from16 v1, v29
@@ -1418,7 +1418,7 @@
 
     move-result-object v29
 
-    .line 1079
+    .line 1082
     move-object/from16 v0, p0
 
     move-object/from16 v1, v29
@@ -2351,7 +2351,7 @@
 
     const/4 v0, 0x1
 
-    .line 1117
+    .line 1120
     :cond_6
     if-eqz v0, :cond_2
 
@@ -2840,7 +2840,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 833
+    .line 800
     goto :goto_0
 
     nop

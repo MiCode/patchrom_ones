@@ -27,15 +27,15 @@
     .parameter "onComplete"
 
     .prologue
-    .line 3748
+    .line 3750
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GSMPhone$PendingOperation;->this$0:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3749
+    .line 3751
     iput-object p2, p0, Lcom/android/internal/telephony/gsm/GSMPhone$PendingOperation;->mOnComplete:Landroid/os/Message;
 
-    .line 3750
+    .line 3752
     return-void
 .end method
 
@@ -47,22 +47,22 @@
     .parameter "e"
 
     .prologue
-    .line 3755
+    .line 3757
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone$PendingOperation;->mOnComplete:Landroid/os/Message;
 
     invoke-static {v0, p1, p2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3756
+    .line 3758
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone$PendingOperation;->mOnComplete:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 3757
+    .line 3759
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GSMPhone$PendingOperation;->mOnComplete:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3759
+    .line 3761
     :cond_0
     return-void
 .end method

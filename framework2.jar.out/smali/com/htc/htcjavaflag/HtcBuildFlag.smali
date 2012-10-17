@@ -4172,7 +4172,7 @@
 
     .prologue
     .line 1846
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -4392,7 +4392,7 @@
 
     .prologue
     .line 1797
-    const/16 v0, 0xe1
+    const/16 v0, 0x26
 
     return v0
 .end method
@@ -4442,7 +4442,7 @@
 
     .prologue
     .line 1799
-    const/16 v0, 0x34
+    const/4 v0, 0x1
 
     return v0
 .end method

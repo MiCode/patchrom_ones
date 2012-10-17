@@ -74,7 +74,7 @@
     .locals 18
 
     .prologue
-    .line 163
+    .line 169
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "BluetoothSCOStream"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->BluetoothSCOStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 174
+    .line 180
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "RingerStream"
@@ -144,7 +144,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->RingerStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 191
+    .line 197
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "VoiceStream"
@@ -173,7 +173,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->VoiceStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 202
+    .line 208
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "AlarmStream"
@@ -202,7 +202,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->AlarmStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 213
+    .line 219
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "MediaStream"
@@ -231,7 +231,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->MediaStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 224
+    .line 230
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "NotificationStream"
@@ -260,7 +260,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->NotificationStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 235
+    .line 241
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "SystemStream"
@@ -289,7 +289,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->SystemStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 246
+    .line 252
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "DtmfStream"
@@ -318,7 +318,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->DtmfStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 257
+    .line 263
     new-instance v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     const-string v1, "DummyStream"
@@ -347,7 +347,7 @@
 
     sput-object v0, Lcom/htc/view/VolumePanel$StreamResources;->DummyStream:Lcom/htc/view/VolumePanel$StreamResources;
 
-    .line 162
+    .line 168
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/htc/view/VolumePanel$StreamResources;
@@ -446,72 +446,72 @@
     .end annotation
 
     .prologue
-    .line 306
+    .line 312
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 307
+    .line 313
     iput p3, p0, Lcom/htc/view/VolumePanel$StreamResources;->streamType:I
 
-    .line 308
+    .line 314
     iput p4, p0, Lcom/htc/view/VolumePanel$StreamResources;->descRes:I
 
-    .line 309
+    .line 315
     iput p5, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconRes:I
 
-    .line 310
+    .line 316
     iput p6, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconMuteRes:I
 
-    .line 311
+    .line 317
     iput p7, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconVibrateRes:I
 
-    .line 312
+    .line 318
     iput p8, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconOutDoorRes:I
 
-    .line 313
+    .line 319
     invoke-static {}, Lcom/htc/view/VolumePanel;->access$000()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 314
+    .line 320
     iput-object p13, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcResName:Ljava/lang/String;
 
-    .line 315
+    .line 321
     move-object/from16 v0, p14
 
     iput-object v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcMuteResName:Ljava/lang/String;
 
-    .line 316
+    .line 322
     move-object/from16 v0, p15
 
     iput-object v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcVibrateName:Ljava/lang/String;
 
-    .line 317
+    .line 323
     move-object/from16 v0, p16
 
     iput-object v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcOutdoorName:Ljava/lang/String;
 
-    .line 324
+    .line 330
     :goto_0
     move/from16 v0, p17
 
     iput-boolean v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->show:Z
 
-    .line 325
+    .line 331
     return-void
 
-    .line 319
+    .line 325
     :cond_0
     iput-object p9, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcResName:Ljava/lang/String;
 
-    .line 320
+    .line 326
     iput-object p10, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcMuteResName:Ljava/lang/String;
 
-    .line 321
+    .line 327
     iput-object p11, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcVibrateName:Ljava/lang/String;
 
-    .line 322
+    .line 328
     iput-object p12, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcOutdoorName:Ljava/lang/String;
 
     goto :goto_0
@@ -544,62 +544,62 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 285
+    .line 291
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 286
+    .line 292
     iput p3, p0, Lcom/htc/view/VolumePanel$StreamResources;->streamType:I
 
-    .line 287
+    .line 293
     iput p4, p0, Lcom/htc/view/VolumePanel$StreamResources;->descRes:I
 
-    .line 288
+    .line 294
     iput p5, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconRes:I
 
-    .line 289
+    .line 295
     iput p6, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconMuteRes:I
 
-    .line 290
+    .line 296
     iput v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconVibrateRes:I
 
-    .line 291
+    .line 297
     iput v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconOutDoorRes:I
 
-    .line 292
+    .line 298
     invoke-static {}, Lcom/htc/view/VolumePanel;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 293
+    .line 299
     iput-object p9, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcResName:Ljava/lang/String;
 
-    .line 294
+    .line 300
     iput-object p10, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcMuteResName:Ljava/lang/String;
 
-    .line 300
+    .line 306
     :goto_0
     const-string v0, ""
 
     iput-object v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcVibrateName:Ljava/lang/String;
 
-    .line 301
+    .line 307
     const-string v0, ""
 
     iput-object v0, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcOutdoorName:Ljava/lang/String;
 
-    .line 302
+    .line 308
     iput-boolean p11, p0, Lcom/htc/view/VolumePanel$StreamResources;->show:Z
 
-    .line 303
+    .line 309
     return-void
 
-    .line 296
+    .line 302
     :cond_0
     iput-object p7, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcResName:Ljava/lang/String;
 
-    .line 297
+    .line 303
     iput-object p8, p0, Lcom/htc/view/VolumePanel$StreamResources;->iconHtcMuteResName:Ljava/lang/String;
 
     goto :goto_0
@@ -610,7 +610,7 @@
     .parameter "name"
 
     .prologue
-    .line 162
+    .line 168
     const-class v0, Lcom/htc/view/VolumePanel$StreamResources;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -626,7 +626,7 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 168
     sget-object v0, Lcom/htc/view/VolumePanel$StreamResources;->$VALUES:[Lcom/htc/view/VolumePanel$StreamResources;
 
     invoke-virtual {v0}, [Lcom/htc/view/VolumePanel$StreamResources;->clone()Ljava/lang/Object;

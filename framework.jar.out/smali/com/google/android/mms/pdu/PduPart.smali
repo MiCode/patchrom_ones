@@ -143,7 +143,7 @@
     sput-object v0, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_ATTACHMENT:[B
 
     .line 98
-    const-string/jumbo v0, "inline"
+    const-string v0, "inline"
 
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
