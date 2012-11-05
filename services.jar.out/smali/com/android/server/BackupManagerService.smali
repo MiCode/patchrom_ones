@@ -6900,6 +6900,8 @@
 
     if-nez v6, :cond_0
 
+    if-nez p2, :cond_0
+
     .line 1608
     :try_start_2
     monitor-exit v5
