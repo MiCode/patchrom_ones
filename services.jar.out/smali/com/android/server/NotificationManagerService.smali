@@ -1237,35 +1237,21 @@
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1288
     invoke-direct {p0, v2, p6}, Lcom/android/server/NotificationManagerService;->cancelNotificationLocked(Lcom/android/server/NotificationManagerService$NotificationRecord;Z)V
 
-    .line 1289
     invoke-direct {p0}, Lcom/android/server/NotificationManagerService;->updateLightsLocked()V
 
-    .line 1290
     invoke-direct {p0}, Lcom/android/server/NotificationManagerService;->updateJogsLocked()V
 
-    .line 1291
     invoke-direct {p0}, Lcom/android/server/NotificationManagerService;->updateCharmsLocked()V
 
-    .line 1292
     const/4 v1, 0x2
 
-    .line 1294
     .end local v2           #r:Lcom/android/server/NotificationManagerService$NotificationRecord;
     :cond_3
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 1296
-    if-ne v1, v7, :cond_0
-
-    .line 1298
-    const/4 v3, 0x0
-
-    invoke-direct {p0, v1, p3, p1, v3}, Lcom/android/server/NotificationManagerService;->broadcastIntent(IILjava/lang/String;Landroid/app/Notification;)V
 
     goto :goto_0
 .end method
